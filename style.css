@@ -385,6 +385,86 @@ body::before {
     letter-spacing: 3px;
 }
 
+.hero-brand {
+    margin-bottom: 1rem;
+}
+
+.brand-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: linear-gradient(135deg, var(--accent-orange), #ffb86c);
+    color: #2b2b2b;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-family: 'Long Cang', cursive;
+    box-shadow: 0 0 15px rgba(255, 159, 67, 0.3);
+}
+
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-tag {
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.hero-tag:hover {
+    border-color: var(--accent-orange);
+    color: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+.hero-sells {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.sell-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.sell-item:hover {
+    border-color: var(--accent-green);
+    background: rgba(38, 222, 129, 0.05);
+    transform: translateY(-3px);
+}
+
+.sell-icon {
+    font-size: 1.8rem;
+}
+
+.sell-content strong {
+    display: block;
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.sell-content p {
+    color: var(--chalk-dim);
+    font-size: 0.8rem;
+}
+
 .hero-cta {
     display: flex;
     gap: 1rem;
@@ -1173,46 +1253,228 @@ body::before {
     color: var(--text-light);
 }
 
-.contact-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    padding: 1.5rem;
-    background: rgba(255, 159, 67, 0.05);
-    border: 2px dashed rgba(255, 159, 67, 0.15);
-    border-radius: 12px;
+/* --- 预约表单 --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.contact-intro p {
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-.contact-intro strong {
-    color: var(--accent-orange);
-}
-
-.contact-cta {
-    text-align: center;
-    margin-top: 2.5rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(255, 159, 67, 0.08) 0%, rgba(38, 222, 129, 0.05) 100%);
-    border: 2px dashed rgba(255, 159, 67, 0.2);
+.contact-form-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 2rem;
 }
 
-.cta-text {
-    color: var(--text-light);
-    font-size: 1.1rem;
+.contact-form-box h4 {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.5rem;
+    color: var(--accent-orange);
     margin-bottom: 1.5rem;
 }
 
-.cta-text strong {
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    background: rgba(255, 159, 67, 0.05);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--chalk-dim);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--accent-orange);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--accent-orange), #ffb86c);
+    border: none;
+    border-radius: 30px;
+    color: #2b2b2b;
+    font-family: 'Long Cang', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 159, 67, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 159, 67, 0.5);
+}
+
+.form-success {
+    text-align: center;
+    padding: 3rem;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.form-success h4 {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.5rem;
     color: var(--accent-green);
+    margin-bottom: 0.5rem;
+}
+
+.form-success p {
+    color: var(--chalk-dim);
+}
+
+.contact-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+    border-color: var(--accent-blue);
+    background: rgba(69, 170, 242, 0.05);
+}
+
+.info-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.contact-info-item h4 {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-main {
+    color: var(--accent-orange) !important;
+    font-size: 1rem !important;
+    font-weight: bold;
+    margin-bottom: 0.2rem !important;
+}
+
+.info-sub {
+    color: var(--chalk-dim);
+    font-size: 0.8rem !important;
+}
+
+.wechat-placeholder {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 159, 67, 0.08);
+    border: 2px dashed rgba(255, 159, 67, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.wechat-placeholder p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* 悬浮咨询按钮 */
+.float-consult {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-orange), #ffb86c);
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(255, 159, 67, 0.4);
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.float-consult:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(255, 159, 67, 0.5);
+}
+
+.float-icon {
+    font-size: 1.2rem;
+}
+
+.float-text {
+    color: #2b2b2b;
+    font-family: 'Long Cang', cursive;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .float-consult {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1rem;
+    }
 }
 
 /* --- 页脚 --- */
@@ -1723,9 +1985,9 @@ body::before {
 /* --- 客户案例 --- */
 .client-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -1778,6 +2040,40 @@ body::before {
     color: var(--accent-green);
     padding-top: 0.8rem;
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.client-card.featured {
+    grid-column: span 1;
+    background: linear-gradient(135deg, rgba(255, 159, 67, 0.08) 0%, rgba(38, 222, 129, 0.05) 100%);
+    border-color: rgba(255, 159, 67, 0.2);
+}
+
+.client-card.featured:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 20px rgba(255, 159, 67, 0.15);
+}
+
+.client-intro {
+    font-size: 0.85rem;
+    color: var(--chalk-dim);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+}
+
+.client-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.client-tag {
+    padding: 0.2rem 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: var(--text-light);
 }
 
 /* --- 差异化定位 --- */
@@ -1899,6 +2195,119 @@ body::before {
     color: var(--accent-orange);
 }
 
+/* --- 关于我们 --- */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-company {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-company h4 {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.5rem;
+    color: var(--accent-orange);
+    margin-bottom: 1rem;
+}
+
+.company-info {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.company-info li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.company-info li strong {
+    color: var(--accent-green);
+}
+
+.company-desc {
+    color: var(--chalk-dim);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.company-desc strong {
+    color: var(--accent-orange);
+}
+
+.about-team h4 {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.team-member {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    border-color: var(--accent-blue);
+    background: rgba(69, 170, 242, 0.05);
+}
+
+.member-avatar {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.member-avatar.spark {
+    animation: float 3s ease-in-out infinite;
+}
+
+.member-info h5 {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.member-title {
+    color: var(--accent-orange);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.member-desc {
+    color: var(--chalk-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.member-exp {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.member-exp span {
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    padding: 0.2rem 0.6rem;
+    background: rgba(38, 222, 129, 0.08);
+    border-radius: 12px;
+}
+
 .diff-bottom {
     text-align: center;
     margin-top: 3rem;
@@ -1919,6 +2328,63 @@ body::before {
 
 .diff-bottom strong {
     color: var(--accent-orange);
+}
+
+/* --- 竞品对比表格 --- */
+.compare-table-wrap {
+    margin-top: 3rem;
+    overflow-x: auto;
+}
+
+.compare-title {
+    text-align: center;
+    font-family: 'Long Cang', cursive;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.compare-table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.compare-table th {
+    background: rgba(255, 159, 67, 0.1);
+    color: var(--text-light);
+    font-family: 'Long Cang', cursive;
+    font-size: 1.1rem;
+}
+
+.compare-table th.highlight {
+    background: rgba(38, 222, 129, 0.15);
+    color: var(--accent-green);
+}
+
+.compare-table td {
+    color: var(--chalk-dim);
+    font-size: 0.95rem;
+}
+
+.compare-table td.highlight {
+    color: var(--accent-green);
+    font-weight: bold;
+}
+
+.compare-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
 }
 
 @media (max-width: 768px) {
@@ -1944,6 +2410,10 @@ body::before {
 
     .client-grid {
         grid-template-columns: 1fr;
+    }
+
+    .client-card.featured {
+        grid-column: span 1;
     }
 
     .diff-content {
