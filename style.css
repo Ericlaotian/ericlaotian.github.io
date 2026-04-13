@@ -1351,3 +1351,377 @@ body::before {
     }
 }
 
+/* --- 前店后院解决方案 --- */
+.solution-highlight {
+    background: linear-gradient(180deg, rgba(255, 159, 67, 0.03) 0%, transparent 100%);
+}
+
+.solution-intro {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.solution-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.diagram-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    width: 280px;
+    transition: all 0.3s ease;
+}
+
+.diagram-box:hover {
+    border-color: var(--accent-orange);
+    transform: translateY(-5px);
+}
+
+.diagram-box.front {
+    border-color: var(--accent-blue);
+}
+
+.diagram-box.front:hover {
+    border-color: var(--accent-blue);
+    background: rgba(69, 170, 242, 0.05);
+}
+
+.diagram-box.back {
+    border-color: var(--accent-pink);
+}
+
+.diagram-box.back:hover {
+    border-color: var(--accent-pink);
+    background: rgba(252, 92, 101, 0.05);
+}
+
+.diagram-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.diagram-box h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+.diagram-box p {
+    color: var(--chalk-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.diagram-arrow {
+    font-size: 2rem;
+    color: var(--accent-orange);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.solution-value {
+    background: rgba(255, 159, 67, 0.05);
+    border: 2px dashed rgba(255, 159, 67, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.solution-value h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.3rem;
+    color: var(--accent-orange);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.value-item {
+    text-align: center;
+}
+
+.value-num {
+    display: block;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.2rem;
+    color: var(--accent-green);
+    margin-bottom: 0.3rem;
+}
+
+.value-label {
+    font-size: 0.85rem;
+    color: var(--chalk-dim);
+}
+
+.solution-modules h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.module-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.module-item:hover {
+    border-color: var(--accent-green);
+    background: rgba(38, 222, 129, 0.05);
+}
+
+.module-num {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.2rem;
+    color: var(--accent-orange);
+}
+
+.module-name {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* --- 客户案例 --- */
+.client-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-card.beauty:hover {
+    border-color: var(--accent-pink);
+    background: rgba(252, 92, 101, 0.05);
+}
+
+.client-card.retail:hover {
+    border-color: var(--accent-blue);
+    background: rgba(69, 170, 242, 0.05);
+}
+
+.client-category {
+    font-size: 0.8rem;
+    color: var(--chalk-dim);
+    margin-bottom: 0.5rem;
+}
+
+.client-name {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.client-scale {
+    font-size: 0.85rem;
+    color: var(--accent-orange);
+    margin-bottom: 0.8rem;
+}
+
+.client-result {
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    padding-top: 0.8rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* --- 差异化定位 --- */
+.diff-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.diff-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 350px;
+}
+
+.diff-box.wrong {
+    border-color: rgba(252, 92, 101, 0.3);
+}
+
+.diff-box.wrong h4 {
+    color: var(--accent-pink);
+}
+
+.diff-box.right {
+    border-color: rgba(38, 222, 129, 0.3);
+    background: rgba(38, 222, 129, 0.03);
+}
+
+.diff-box.right h4 {
+    color: var(--accent-green);
+}
+
+.diff-box h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.diff-box ul {
+    list-style: none;
+}
+
+.diff-box li {
+    color: var(--chalk-dim);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.diff-box li:last-child {
+    border-bottom: none;
+}
+
+.diff-box.right li {
+    color: var(--text-light);
+}
+
+.diff-box.right strong {
+    color: var(--accent-green);
+}
+
+.diff-vs {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2rem;
+    color: var(--chalk-dim);
+}
+
+.diff-advantage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.adv-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 180px;
+}
+
+.adv-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.adv-item h4 {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.adv-item p {
+    font-size: 0.85rem;
+    color: var(--chalk-dim);
+    line-height: 1.5;
+}
+
+.adv-plus, .adv-equals {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2rem;
+    color: var(--accent-orange);
+}
+
+.adv-result {
+    background: rgba(255, 159, 67, 0.08);
+    border-color: rgba(255, 159, 67, 0.3);
+}
+
+.adv-result h4 {
+    color: var(--accent-orange);
+}
+
+@media (max-width: 768px) {
+    .solution-diagram {
+        flex-direction: column;
+    }
+
+    .diagram-box {
+        width: 100%;
+    }
+
+    .diagram-arrow {
+        transform: rotate(90deg);
+    }
+
+    .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .client-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diff-content {
+        flex-direction: column;
+    }
+
+    .diff-box {
+        width: 100%;
+    }
+
+    .diff-vs {
+        transform: rotate(90deg);
+    }
+
+    .diff-advantage {
+        flex-direction: column;
+    }
+}
+
+
