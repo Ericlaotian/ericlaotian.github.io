@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1天搭建销售管理系统，我是怎么做到的 | 华创天诚</title>
+    <meta name="description" content="AI Coding让传统开发周期从月级变成天级。本文分享实操经验，教你如何用AI快速搭建系统。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Long+Cang&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-page { max-width: 800px; margin: 0 auto; padding: 120px 2rem 4rem; }
+        .article-header { margin-bottom: 3rem; }
+        .article-category { display: inline-block; padding: 0.3rem 1rem; background: rgba(38, 222, 129, 0.2); border-radius: 20px; color: var(--accent-green); font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-title { font-family: 'ZCOOL KuaiLe', cursive; font-size: 2.2rem; color: var(--text-light); line-height: 1.4; margin-bottom: 1rem; }
+        .article-meta { color: var(--chalk-dim); font-size: 0.9rem; margin-bottom: 2rem; }
+        .article-meta span { margin-right: 1.5rem; }
+        .article-body { font-size: 1.05rem; line-height: 1.9; color: var(--text-light); }
+        .article-body h2 { font-family: 'Long Cang', cursive; font-size: 1.6rem; color: var(--accent-green); margin: 2.5rem 0 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px dashed rgba(38, 222, 129, 0.3); }
+        .article-body h3 { font-family: 'Long Cang', cursive; font-size: 1.3rem; color: var(--accent-orange); margin: 2rem 0 1rem; }
+        .article-body p { margin-bottom: 1.2rem; color: rgba(255, 255, 255, 0.85); }
+        .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+        .article-body li { margin-bottom: 0.5rem; color: rgba(255, 255, 255, 0.85); }
+        .article-body strong { color: var(--accent-yellow); }
+        .article-body blockquote { background: rgba(255, 255, 255, 0.05); border-left: 4px solid var(--accent-orange); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .article-body blockquote p { margin-bottom: 0; }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .article-body th, .article-body td { padding: 0.8rem 1rem; border: 1px dashed rgba(255, 255, 255, 0.2); text-align: left; }
+        .article-body th { background: rgba(255, 255, 255, 0.1); color: var(--accent-green); }
+        .article-cta { margin-top: 3rem; padding: 2rem; background: rgba(38, 222, 129, 0.1); border: 2px dashed var(--accent-green); border-radius: 12px; text-align: center; }
+        .article-cta h4 { font-family: 'ZCOOL KuaiLe', cursive; font-size: 1.3rem; color: var(--accent-green); margin-bottom: 1rem; }
+        .article-cta p { color: var(--chalk-dim); margin-bottom: 1rem; }
+        .article-cta a { display: inline-block; padding: 0.8rem 2rem; background: var(--accent-green); color: var(--bg-dark); text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .back-link { display: inline-block; margin-bottom: 2rem; color: var(--chalk-dim); text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { color: var(--accent-green); }
+        .highlight-box { background: rgba(255, 217, 61, 0.1); border: 2px dashed var(--accent-yellow); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .highlight-box h4 { color: var(--accent-yellow); margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-logo">💄 华创天诚</div>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于华创</a></li>
+                <li><a href="../index.html#solution-highlight">前店后院</a></li>
+                <li><a href="../index.html#products">产品能力</a></li>
+                <li><a href="../index.html#clients">客户案例</a></li>
+                <li><a href="../index.html#knowledge">美业干货</a></li>
+                <li><a href="../index.html#contact">预约演示</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="article-page">
+        <a href="../index.html#knowledge" class="back-link">← 返回美业干货</a>
+
+        <header class="article-header">
+            <span class="article-category">💡 干货方法</span>
+            <h1 class="article-title">1天搭建销售管理系统，我是怎么做到的</h1>
+            <div class="article-meta">
+                <span>📅 2026-04-11</span>
+                <span>👁 阅读 5.6k</span>
+                <span>💬 评论 89</span>
+            </div>
+        </header>
+
+        <div class="article-body">
+            <p>先说结论：<strong>AI Coding让开发效率提升70%</strong>，这是我在华创天诚工作以来最大的感受。</p>
+
+            <p>以前搭一个销售管理系统，从需求到上线至少一个月。现在？一天就能出原型，三天就能上线。</p>
+
+            <h2>一、传统开发 vs AI Coding</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>阶段</th>
+                        <th>传统开发</th>
+                        <th>AI Coding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>需求分析</td>
+                        <td>3-5天</td>
+                        <td>1天（AI辅助PRD）</td>
+                    </tr>
+                    <tr>
+                        <td>原型设计</td>
+                        <td>3-5天</td>
+                        <td>半天（AI生成原型）</td>
+                    </tr>
+                    <tr>
+                        <td>开发实现</td>
+                        <td>10-15天</td>
+                        <td>1-2天（AI写代码）</td>
+                    </tr>
+                    <tr>
+                        <td>测试修复</td>
+                        <td>5-7天</td>
+                        <td>1天（AI辅助测试）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>总周期</strong></td>
+                        <td><strong>21-32天</strong></td>
+                        <td><strong>3-4天</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <blockquote>
+                <p>有人会问："AI写的代码能用吗？" 我的回答：AI不是替你写所有代码，而是帮你写80%的基础代码，你只需要做20%的核心逻辑和调优。</p>
+            </blockquote>
+
+            <h2>二、我是怎么做到的？</h2>
+
+            <h3>第一步：用AI生成PRD（半天）</h3>
+
+            <p>以前写需求文档，从0到1最痛苦。现在我跟AI说：</p>
+
+            <div class="highlight-box">
+                <h4>💡 我的提示词</h4>
+                <p>"我要做一个美业门店的销售管理系统，需要功能：客户管理、产品管理、订单管理、业绩统计。请帮我生成一份PRD文档，包含功能清单、数据结构、页面流程。"</p>
+            </div>
+
+            <p>AI生成的PRD包含：</p>
+            <ul>
+                <li>功能模块拆分</li>
+                <li>数据表结构设计</li>
+                <li>页面跳转流程图</li>
+                <li>关键业务逻辑说明</li>
+            </ul>
+
+            <p>我只需要在基础上微调，PRD半天就搞定了。</p>
+
+            <h3>第二步：AI生成原型（半天）</h3>
+
+            <p>有了PRD，下一步是可视化原型。我跟AI说：</p>
+
+            <div class="highlight-box">
+                <h4>💡 我的提示词</h4>
+                <p>"基于上面的PRD，帮我生成一个HTML原型，包含：客户列表页、产品管理页、订单录入页、业绩看板。风格要简洁，适配移动端。"</p>
+            </div>
+
+            <p>AI生成的原型：</p>
+            <ul>
+                <li>HTML + CSS + 基础交互</li>
+                <li>响应式布局</li>
+                <li>可以点击演示</li>
+            </ul>
+
+            <p>拿着这个原型跟客户沟通，比对着文档讲清楚多了。</p>
+
+            <h3>第三步：AI写核心代码（1天）</h3>
+
+            <p>原型确认后，就是真正的开发了。这里AI Coding的威力才真正显现。</p>
+
+            <p>比如，我要实现"订单管理"模块：</p>
+
+            <div class="highlight-box">
+                <h4>💡 我的提示词</h4>
+                <p>"请帮我实现订单管理功能：1）订单列表，支持筛选和搜索；2）订单详情，显示客户信息和产品明细；3）订单状态流转（待付款→已付款→已完成）。后端用Python Flask，数据库用SQLite。"</p>
+            </div>
+
+            <p>AI生成的代码：</p>
+            <ul>
+                <li>数据库模型（订单表、订单明细表）</li>
+                <li>API接口（增删改查）</li>
+                <li>前端页面（列表、详情、状态管理）</li>
+                <li>基础的数据校验</li>
+            </ul>
+
+            <p>我需要做的：</p>
+            <ul>
+                <li>调整UI样式</li>
+                <li>补充业务规则（比如库存扣减）</li>
+                <li>联调测试</li>
+            </ul>
+
+            <h3>第四步：AI辅助测试（半天）</h3>
+
+            <p>测试也能用AI。我会让AI：</p>
+            <ul>
+                <li>生成测试用例</li>
+                <li>写自动化测试脚本</li>
+                <li>检查代码边界条件</li>
+            </ul>
+
+            <h2>三、AI Coding不是万能的</h2>
+
+            <p>说点实话，AI Coding也有局限：</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>AI擅长的</th>
+                        <th>AI不擅长的</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>标准化功能（CRUD）</td>
+                        <td>复杂业务逻辑</td>
+                    </tr>
+                    <tr>
+                        <td>通用组件开发</td>
+                        <td>高度定制化的交互</td>
+                    </tr>
+                    <tr>
+                        <td>代码生成和重构</td>
+                        <td>架构设计决策</td>
+                    </tr>
+                    <tr>
+                        <td>文档生成</td>
+                        <td>需求理解（需要人）</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>所以我的做法是：<strong>AI做80%，人做20%</strong>。</p>
+
+            <h2>四、AI Coding的核心价值</h2>
+
+            <h3>1. 快速验证想法</h3>
+            <p>以前有个想法，要等开发排期。现在今天想，明天就能看到原型。验证失败成本低，成功就能快速放大。</p>
+
+            <h3>2. 降低试错成本</h3>
+            <p>传统开发一个模块几万起，AI开发几千块就能出原型。试错了不心疼，试对了再投入。</p>
+
+            <h3>3. 缩短交付周期</h3>
+            <p>客户等不及是常态。AI Coding让交付周期从月级变成天级，客户满意度提升，竞争力自然增强。</p>
+
+            <h2>五、实际案例</h2>
+
+            <p>上周有个客户说："我们想做一个门店巡检系统，下周要用。"</p>
+
+            <p>按照传统开发，不可能完成。但用AI Coding：</p>
+            <ul>
+                <li>Day 1：需求梳理 + 原型确认</li>
+                <li>Day 2：核心功能开发</li>
+                <li>Day 3：测试 + 上线</li>
+            </ul>
+
+            <p>客户很惊讶："你们怎么做到的？"</p>
+            <p>我说："有AI帮忙。"</p>
+
+            <h2>六、总结</h2>
+
+            <p>AI Coding不是魔法，是<strong>工具升级</strong>。就像电钻替代手摇钻，效率提升是实实在在的。</p>
+
+            <p>但AI不能替代的是：</p>
+            <ul>
+                <li>对业务的理解</li>
+                <li>对需求的判断</li>
+                <li>对质量的把控</li>
+            </ul>
+
+            <p>AI + 业务经验，才是真正的降维打击。</p>
+        </div>
+
+        <div class="article-cta">
+            <h4>🤖 想体验AI Coding的威力？</h4>
+            <p>免费诊断 · 快速原型 · 天级交付</p>
+            <a href="../index.html#contact">预约免费诊断</a>
+        </div>
+    </article>
+</body>
+</html>
