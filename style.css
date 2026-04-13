@@ -50,7 +50,7 @@ body {
     font-family: 'ZCOOL XiaoWei', 'Patrick Hand', cursive, sans-serif;
     background-color: var(--bg-chalkboard);
     color: var(--text-chalk);
-    line-height: 1.8;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
@@ -367,15 +367,14 @@ body::after {
 }
 
 .hero-name {
-    font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
+    font-family: 'ZCOOL KuaiLe', 'Long Cang', cursive;
     font-size: 3.5rem;
-    color: var(--text-chalk);
+    color: #FFFFFF;
     text-shadow:
-        3px 3px 0 rgba(0,0,0,0.3),
+        0 0 10px rgba(255, 255, 255, 0.3),
         0 0 20px rgba(255, 255, 255, 0.15),
-        0 0 40px rgba(255, 255, 255, 0.08),
-        0 0 1px rgba(255, 255, 255, 0.6),
-        0 0 2px rgba(255, 255, 255, 0.4);
+        0 0 30px rgba(255, 255, 255, 0.08),
+        3px 3px 0 rgba(0,0,0,0.3);
     margin-bottom: 0.3rem;
     letter-spacing: 5px;
 }
@@ -410,14 +409,14 @@ body::after {
 }
 
 .hero-slogan {
-    font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
+    font-family: 'ZCOOL KuaiLe', 'Long Cang', cursive;
     font-size: 1.8rem;
-    color: var(--accent-yellow);
+    color: #F4E1C1;
     margin-bottom: 0.5rem;
     text-shadow: 
-        0 0 20px rgba(255, 217, 61, 0.4),
-        2px 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 1px rgba(255, 255, 255, 0.5);
+        0 0 10px rgba(244, 225, 193, 0.4),
+        0 0 20px rgba(244, 225, 193, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 3px;
 }
 
@@ -611,13 +610,13 @@ body::after {
 }
 
 .chalk-title {
-    font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
+    font-family: 'ZCOOL KuaiLe', 'Long Cang', cursive;
     font-size: 2.5rem;
-    color: var(--text-chalk);
+    color: #FFFFFF;
     text-shadow: 
-        2px 2px 4px var(--shadow-soft),
-        0 0 15px rgba(255, 255, 255, 0.1),
-        0 0 1px rgba(255, 255, 255, 0.5);
+        0 0 10px rgba(255, 255, 255, 0.25),
+        0 0 20px rgba(255, 255, 255, 0.12),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
     display: inline-block;
     letter-spacing: 3px;
 }

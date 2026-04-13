@@ -42,47 +42,128 @@
 
 ## 二、字体规范
 
-### 中文推荐字体
+### 大标题（一级标题）
 
 | 字体 | 风格 | 用途 |
 |------|------|------|
-| **Long Cang**（龙藏体） | 手写、行书感 | 标题、重点文字 |
-| **ZCOOL XiaoWei**（站酷小薇） | 手写、可爱 | 正文、说明 |
-| **汉仪小麦体** | 粉笔涂抹感 | 可选替换 |
-| **方正喵呜体** | 手写萌系 | 可选替换 |
+| **站酷快乐体** | 粉笔手写、活泼 | 主标题（优先） |
+| **汉仪粉笔体** | 粉笔涂抹感 | 主标题（备选） |
+| **Long Cang**（龙藏体） | 手写、行书感 | 网页标题 |
 
-### 英文推荐字体
+**字号要求：** 60pt+（网页约 3rem+）
+
+**颜色要求：**
+- 纯白 `#FFFFFF`（主色）
+- 暖黄 `#F4E1C1`（强调）
+
+**效果要求：** 外发光效果模拟粉笔灰
+```css
+.chalk-title {
+    font-family: 'ZCOOL KuaiLe', 'HanYi FenBi', 'Long Cang', cursive;
+    font-size: 3rem;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 30px rgba(255, 255, 255, 0.08);
+}
+```
+
+### 正文/说明
 
 | 字体 | 风格 | 用途 |
 |------|------|------|
-| **Gloria Hallelujah** | 粉笔手写 | 英文标题 |
-| **KG Blank Space Sketch** | 粉笔涂抹 | 可选替换 |
-| **Patrick Hand** | 黑板书写 | 正文 |
-| **Architects Daughter** | 手写工整 | 辅助文字 |
+| **站酷小薇体** | 手写、可爱 | 正文、说明（优先） |
+| **ZCOOL XiaoWei** | 手写、清晰 | 网页正文 |
+
+**行间距要求：** 1.5 倍
+
+**颜色要求：** 粉笔白 `#F5F5F5` 或 粉笔灰 `rgba(255,255,255,0.7)`
+
+```css
+body {
+    font-family: 'ZCOOL XiaoWei', cursive;
+    line-height: 1.5;
+    color: #F5F5F5;
+}
+```
+
+### 英文/数字
+
+| 字体 | 风格 | 用途 |
+|------|------|------|
+| **Chalkboard SE** | 黑板手写 | 英文标题（优先） |
+| **Patrick Hand** | 手写工整 | 英文正文 |
+| **Gloria Hallelujah** | 粉笔手写 | 网页英文 |
+
+```css
+.en-text {
+    font-family: 'Chalkboard SE', 'Patrick Hand', 'Gloria Hallelujah', cursive;
+}
+```
 
 ### 字体加载
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Long+Cang&family=ZCOOL+XiaoWei&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Long+Cang&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
 ```
 
 ### 字体使用规则
 
-```css
-/* 标题 */
-h1, h2, h3 {
-    font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
-}
-
-/* 正文 */
-body {
-    font-family: 'ZCOOL XiaoWei', 'Patrick Hand', cursive;
-}
-```
+| 场景 | 字体 | 字号 | 颜色 |
+|------|------|------|------|
+| **大标题** | 站酷快乐体 / Long Cang | 3rem+ | 纯白/暖黄 |
+| **小标题** | Long Cang | 1.8rem | 纯白 |
+| **正文** | 站酷小薇体 | 1rem | 粉笔白 |
+| **英文/数字** | Chalkboard SE | 同级 | 同级 |
+| **注释/辅助** | ZCOOL XiaoWei | 0.9rem | 粉笔灰 |
 
 ---
 
-## 三、粉笔质感效果
+## 三、质感处理
+
+### 粉笔纹理叠加
+
+**网页实现：**
+```css
+/* 文字粉笔灰效果 */
+.chalk-text {
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+/* 粉笔纹理叠加（网页） */
+.chalkboard-bg::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("粉笔纹理.png");
+    mix-blend-mode: multiply;
+    opacity: 0.3;
+    pointer-events: none;
+}
+```
+
+**设计软件（PS/AI）：**
+1. 创建文字图层
+2. 叠加粉笔纹理图片
+3. 混合模式设为「正片叠底」或「叠加」
+4. 不透明度 20%-40%
+
+**效果要求：**
+- 文字看起来像是真的写在板子上
+- 不是浮在表面，有摩擦质感
+- 边缘有粉笔灰掉落的颗粒感
+
+---
+
+## 四、粉笔质感效果
 
 ### 1. 粉笔灰噪点
 
@@ -138,7 +219,7 @@ body {
 
 ---
 
-## 四、装饰元素
+## 五、装饰元素
 
 ### 1. 粉笔夹
 
@@ -184,7 +265,7 @@ body {
 
 ---
 
-## 五、视觉层次
+## 六、视觉层次
 
 ### 信息层级
 
@@ -207,7 +288,7 @@ body {
 
 ---
 
-## 六、动效规范
+## 七、动效规范
 
 ### 微动效
 
@@ -230,7 +311,7 @@ transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
 ---
 
-## 七、场景应用
+## 八、场景应用
 
 ### 网站主页
 
