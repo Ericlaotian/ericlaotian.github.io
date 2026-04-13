@@ -11,18 +11,31 @@
 }
 
 :root {
-    --bg-dark: #2b2b2b;
-    --bg-chalkboard: #333;
-    --text-light: #f0f0f0;
-    --text-dim: #aaa;
+    /* 黑板背景 */
+    --bg-chalkboard: #1B4D3E;
+    --bg-dark: #1B4D3E;
+    --bg-dark-alt: #2b2b2b;
+    
+    /* 粉笔文字 */
+    --text-chalk: #f5f5f5;
+    --text-light: #f5f5f5;
+    --text-dim: rgba(255, 255, 255, 0.5);
+    --chalk-white: rgba(255, 255, 255, 0.85);
+    --chalk-dim: rgba(255, 255, 255, 0.5);
+    
+    /* 粉笔点缀色 */
+    --accent-red: #ff6b6b;
+    --accent-yellow: #ffd93d;
     --accent-orange: #ff9f43;
     --accent-green: #26de81;
     --accent-blue: #45aaf2;
-    --accent-pink: #fc5c65;
-    --accent-yellow: #ffd93d;
-    --chalk-white: rgba(255, 255, 255, 0.85);
-    --chalk-dim: rgba(255, 255, 255, 0.5);
+    --accent-pink: #ff6b9d;
+    
+    /* 旧配色兼容 */
+    --bg-chalkboard-old: #333;
     --shadow-soft: rgba(0, 0, 0, 0.3);
+    
+    /* 粉笔灰质感 */
     --chalk-texture: 
         0 0 1px rgba(255, 255, 255, 0.5),
         0 0 2px rgba(255, 255, 255, 0.3),
@@ -34,9 +47,9 @@ html {
 }
 
 body {
-    font-family: 'ZCOOL XiaoWei', 'Long Cang', cursive, sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    font-family: 'ZCOOL XiaoWei', 'Patrick Hand', cursive, sans-serif;
+    background-color: var(--bg-chalkboard);
+    color: var(--text-chalk);
     line-height: 1.8;
     overflow-x: hidden;
 }
@@ -50,16 +63,36 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.02) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.015) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.01) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.02) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.015) 0%, transparent 50%),
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 2px,
-            rgba(255,255,255,0.003) 2px,
-            rgba(255,255,255,0.003) 4px
+            rgba(255,255,255,0.004) 2px,
+            rgba(255,255,255,0.004) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(255,255,255,0.002) 2px,
+            rgba(255,255,255,0.002) 4px
         );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- 粉笔灰噪点纹理 --- */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
 }
@@ -336,11 +369,13 @@ body::before {
 .hero-name {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 3.5rem;
-    color: var(--accent-orange);
+    color: var(--text-chalk);
     text-shadow:
         3px 3px 0 rgba(0,0,0,0.3),
-        0 0 20px rgba(255, 159, 67, 0.2),
-        0 0 40px rgba(255, 255, 255, 0.1);
+        0 0 20px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(255, 255, 255, 0.08),
+        0 0 1px rgba(255, 255, 255, 0.6),
+        0 0 2px rgba(255, 255, 255, 0.4);
     margin-bottom: 0.3rem;
     letter-spacing: 5px;
 }
@@ -377,11 +412,12 @@ body::before {
 .hero-slogan {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 1.8rem;
-    color: var(--accent-orange);
+    color: var(--accent-yellow);
     margin-bottom: 0.5rem;
     text-shadow: 
-        0 0 20px rgba(255, 159, 67, 0.4),
-        2px 2px 4px rgba(0, 0, 0, 0.3);
+        0 0 20px rgba(255, 217, 61, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 1px rgba(255, 255, 255, 0.5);
     letter-spacing: 3px;
 }
 
@@ -577,10 +613,11 @@ body::before {
 .chalk-title {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 2.5rem;
-    color: var(--text-light);
+    color: var(--text-chalk);
     text-shadow: 
         2px 2px 4px var(--shadow-soft),
-        0 0 15px rgba(255, 255, 255, 0.1);
+        0 0 15px rgba(255, 255, 255, 0.1),
+        0 0 1px rgba(255, 255, 255, 0.5);
     display: inline-block;
     letter-spacing: 3px;
 }
@@ -590,17 +627,16 @@ body::before {
     height: 3px;
     background: linear-gradient(90deg,
         transparent,
-        var(--accent-orange),
+        var(--accent-red),
         var(--accent-yellow),
         var(--accent-green),
         var(--accent-blue),
-        var(--accent-pink),
         transparent
     );
     margin: 1rem auto 0;
     position: relative;
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(255, 159, 67, 0.3);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
 }
 
 .chalk-line::before {
@@ -611,9 +647,9 @@ body::before {
     transform: translateX(-50%);
     width: 10px;
     height: 10px;
-    background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-yellow));
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 159, 67, 0.5);
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
 }
 
 /* --- 业务卡片 --- */
@@ -763,11 +799,10 @@ body::before {
     bottom: 0;
     width: 3px;
     background: linear-gradient(180deg, 
-        var(--accent-orange), 
+        var(--accent-red), 
         var(--accent-yellow), 
         var(--accent-green), 
         var(--accent-blue),
-        var(--accent-pink),
         transparent
     );
     border-radius: 2px;
