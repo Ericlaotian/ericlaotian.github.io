@@ -928,6 +928,147 @@ body::after {
     padding: 0.3rem 0;
 }
 
+/* --- 美业干货板块 --- */
+.knowledge-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.knowledge-tab {
+    font-family: 'Long Cang', cursive;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: var(--chalk-dim);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.knowledge-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-green);
+    color: var(--text-light);
+}
+
+.knowledge-tab.active {
+    background: rgba(38, 222, 129, 0.15);
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.knowledge-panel {
+    display: none;
+}
+
+.knowledge-panel.active {
+    display: block;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.article-card:hover {
+    border-color: var(--accent-orange);
+    background: rgba(255, 159, 67, 0.08);
+    transform: translateY(-3px);
+}
+
+.article-card.featured {
+    border-color: var(--accent-orange);
+    background: rgba(255, 159, 67, 0.1);
+}
+
+.article-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(255, 159, 67, 0.2);
+    border-radius: 4px;
+    color: var(--accent-orange);
+    margin-bottom: 0.8rem;
+}
+
+.article-card h4 {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.article-card p {
+    color: var(--chalk-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--chalk-dim);
+    opacity: 0.7;
+}
+
+.article-meta span:first-child {
+    color: var(--accent-green);
+}
+
+.knowledge-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.knowledge-cta p {
+    color: var(--chalk-dim);
+    font-size: 1rem;
+}
+
+.knowledge-cta a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.knowledge-cta a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .knowledge-tabs {
+        gap: 0.5rem;
+    }
+    
+    .knowledge-tab {
+        font-size: 0.95rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .timeline {
         padding-left: 1.5rem;
