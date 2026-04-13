@@ -123,9 +123,6 @@ body::after {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 1.5rem;
     color: var(--accent-orange);
-    text-shadow: 
-        2px 2px 4px var(--shadow-soft),
-        0 0 2px rgba(255, 255, 255, 0.3);
     letter-spacing: 2px;
 }
 
@@ -159,7 +156,6 @@ body::after {
 
 .nav-links a:hover {
     color: var(--accent-orange);
-    text-shadow: 0 0 8px rgba(255, 159, 67, 0.4);
 }
 
 .nav-links a::after {
@@ -218,7 +214,6 @@ body::after {
     height: 30px;
     background: linear-gradient(135deg, #8B4513, #A0522D);
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .chalk-clip::before {
@@ -264,10 +259,7 @@ body::after {
     position: relative;
     margin: 0 auto;
     border: 3px dashed rgba(255,255,255,0.2);
-    box-shadow:
-        0 0 20px rgba(76, 175, 80, 0.3),
-        inset 0 -10px 20px rgba(0,0,0,0.1);
-}
+    }
 
 .frog-eyes {
     display: flex;
@@ -357,7 +349,6 @@ body::after {
     bottom: -5px;
     right: -5px;
     font-size: 2rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     animation: bounce 2s ease-in-out infinite;
 }
 
@@ -392,7 +383,6 @@ body::after {
     border-left: 3px dashed var(--accent-orange);
     background: rgba(255, 255, 255, 0.03);
     border-radius: 0 8px 8px 0;
-    text-shadow: 0 0 10px rgba(38, 222, 129, 0.3);
 }
 
 .hero-desc {
@@ -408,10 +398,6 @@ body::after {
     font-size: 1.8rem;
     color: #F4E1C1;
     margin-bottom: 0.5rem;
-    text-shadow: 
-        0 0 10px rgba(244, 225, 193, 0.4),
-        0 0 20px rgba(244, 225, 193, 0.2),
-        2px 2px 4px rgba(0, 0, 0, 0.3);
     letter-spacing: 3px;
 }
 
@@ -427,7 +413,6 @@ body::after {
     border-radius: 20px;
     font-size: 0.9rem;
     font-family: 'Long Cang', cursive;
-    box-shadow: 0 0 15px rgba(255, 159, 67, 0.3);
 }
 
 .hero-tags {
@@ -517,12 +502,10 @@ body::after {
     background: linear-gradient(135deg, var(--accent-orange), #ffb86c);
     border-color: var(--accent-orange);
     color: #2b2b2b;
-    box-shadow: 0 0 20px rgba(255, 159, 67, 0.3);
 }
 
 .cta-btn.primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 30px rgba(255, 159, 67, 0.5);
 }
 
 .cta-btn.secondary {
@@ -561,7 +544,6 @@ body::after {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 1.8rem;
     color: var(--accent-orange);
-    text-shadow: 0 0 10px rgba(255, 159, 67, 0.3);
 }
 
 .trust-label {
@@ -608,10 +590,6 @@ body::after {
     font-family: 'ZCOOL KuaiLe', 'Long Cang', cursive;
     font-size: 2.5rem;
     color: #FFFFFF;
-    text-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.25),
-        0 0 20px rgba(255, 255, 255, 0.12),
-        2px 2px 4px rgba(0, 0, 0, 0.3);
     display: inline-block;
     letter-spacing: 3px;
 }
@@ -630,7 +608,6 @@ body::after {
     margin: 1rem auto 0;
     position: relative;
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
 }
 
 .chalk-line::before {
@@ -643,7 +620,6 @@ body::after {
     height: 10px;
     background: linear-gradient(135deg, var(--accent-red), var(--accent-yellow));
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
 }
 
 /* --- 业务卡片 --- */
@@ -672,7 +648,6 @@ body::after {
 .chalk-card:hover {
     border-color: var(--accent-orange);
     background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 30px rgba(255, 159, 67, 0.08);
     transform: translateY(-5px);
 }
 
@@ -684,7 +659,6 @@ body::after {
     height: 20px;
     background: linear-gradient(135deg, #D4A574, #C4956A);
     border-radius: 0 0 6px 6px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 .card-clip::before {
@@ -709,9 +683,6 @@ body::after {
     font-size: 1.8rem;
     color: var(--accent-orange);
     margin-bottom: 0.8rem;
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 15px rgba(255, 159, 67, 0.2);
 }
 
 .card-tags {
@@ -747,7 +718,6 @@ body::after {
 
 .tag:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px currentColor;
 }
 
 .chalk-card p {
@@ -825,7 +795,6 @@ body::after {
     background: var(--accent-orange);
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
-    box-shadow: 0 0 10px rgba(255, 159, 67, 0.4);
 }
 
 .timeline-item.future::before {
@@ -1048,7 +1017,7 @@ body::after {
 }
 
 .knowledge-cta a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -1196,12 +1165,8 @@ body::after {
     color: var(--accent-orange);
     text-align: center;
     background: rgba(255, 159, 67, 0.05);
-    animation: glow 3s ease-in-out infinite;
 }
 
-@keyframes glow {
-    0%, 100% { box-shadow: 0 0 10px rgba(255, 159, 67, 0.1); }
-    50% { box-shadow: 0 0 25px rgba(255, 159, 67, 0.2); }
 }
 
 /* --- 关于火花 --- */
@@ -1242,10 +1207,7 @@ body::after {
     position: absolute;
     bottom: 0;
     left: 10px;
-    box-shadow: 
-        0 0 30px rgba(255, 159, 67, 0.5),
-        0 0 60px rgba(255, 159, 67, 0.3);
-}
+    }
 
 .spark-flame::before {
     content: '';
@@ -1528,12 +1490,10 @@ body::after {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 159, 67, 0.3);
 }
 
 .submit-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(255, 159, 67, 0.5);
 }
 
 .form-success {
@@ -1627,7 +1587,6 @@ body::after {
     padding: 0.8rem 1.5rem;
     background: linear-gradient(135deg, var(--accent-orange), #ffb86c);
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(255, 159, 67, 0.4);
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s ease;
@@ -1635,7 +1594,6 @@ body::after {
 
 .float-consult:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 30px rgba(255, 159, 67, 0.5);
 }
 
 .float-icon {
@@ -1795,9 +1753,6 @@ body::after {
     font-size: 1.3rem;
     color: var(--text-light);
     margin-bottom: 0.5rem;
-    text-shadow: 
-        1px 1px 2px rgba(0, 0, 0, 0.3),
-        0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .pain-card p {
@@ -1862,9 +1817,6 @@ body::after {
     font-size: 1.4rem;
     color: var(--accent-orange);
     margin-bottom: 0.5rem;
-    text-shadow: 
-        2px 2px 3px rgba(0, 0, 0, 0.3),
-        0 0 10px rgba(255, 159, 67, 0.15);
 }
 
 .cap-desc {
@@ -1891,9 +1843,6 @@ body::after {
     font-family: 'Long Cang', 'Gloria Hallelujah', cursive;
     font-size: 2rem;
     color: var(--accent-green);
-    text-shadow: 
-        0 0 10px rgba(38, 222, 129, 0.4),
-        2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
@@ -2114,9 +2063,6 @@ body::after {
     font-size: 2.2rem;
     color: var(--accent-green);
     margin-bottom: 0.3rem;
-    text-shadow: 
-        0 0 15px rgba(38, 222, 129, 0.5),
-        2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .value-label {
@@ -2207,9 +2153,6 @@ body::after {
     font-size: 1.5rem;
     color: var(--text-light);
     margin-bottom: 0.3rem;
-    text-shadow: 
-        1px 1px 2px rgba(0, 0, 0, 0.3),
-        0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .client-scale {
@@ -2234,7 +2177,6 @@ body::after {
 
 .client-card.featured:hover {
     border-color: var(--accent-orange);
-    box-shadow: 0 0 20px rgba(255, 159, 67, 0.15);
 }
 
 .client-intro {
