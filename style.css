@@ -2602,12 +2602,12 @@ body::after {
     width: 150px;
     height: 180px;
     position: relative;
-    animation: spark-float 3s ease-in-out infinite;
+    animation: spark-breathe 3s ease-in-out infinite;
 }
 
-@keyframes spark-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+@keyframes spark-breathe {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.03); }
 }
 
 /* 火焰身体 */
@@ -2620,6 +2620,12 @@ body::after {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    animation: spark-pulse 3s ease-in-out infinite;
+}
+
+@keyframes spark-pulse {
+    0%, 100% { border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+    50% { border-radius: 50% 50% 45% 45% / 65% 65% 35% 35%; }
 }
 
 /* 火焰高光 */
@@ -2688,6 +2694,13 @@ body::after {
     top: -5px;
     left: 50%;
     transform: translateX(-50%);
+    animation: spark-crown-wave 2s ease-in-out infinite;
+}
+
+@keyframes spark-crown-wave {
+    0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
+    25% { transform: translateX(-50%) rotate(3deg) scale(1.05); }
+    75% { transform: translateX(-50%) rotate(-3deg) scale(1.05); }
 }
 
 /* 内容区 */
