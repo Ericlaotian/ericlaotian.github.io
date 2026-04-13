@@ -2613,7 +2613,7 @@ body::after {
 /* 火焰身体 */
 .flame-body {
     width: 100px;
-    height: 140px;
+    height: 130px;
     background: linear-gradient(180deg, #ff6b35 0%, #ff8c42 30%, #ffa94d 60%, #ffd93d 100%);
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     position: absolute;
@@ -2638,7 +2638,7 @@ body::after {
 /* 脸部 */
 .spark-face {
     position: absolute;
-    bottom: 35px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -2651,8 +2651,8 @@ body::after {
 }
 
 .spark-eyes .eye {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     background: #1a1a2e;
     border-radius: 50%;
     position: relative;
