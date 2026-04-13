@@ -894,15 +894,26 @@ body::after {
 
 .timeline-card .highlight {
     color: var(--accent-green);
-    font-size: 0.9rem;
-    margin-top: 0.8rem;
-    padding-top: 0.8rem;
-    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    font-weight: bold;
 }
 
 .timeline-card .accent {
     color: var(--accent-orange);
     font-weight: bold;
+}
+
+.timeline-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed rgba(255, 255, 255, 0.15);
+}
+
+.timeline-heading {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .feature-list {
@@ -2419,6 +2430,23 @@ body::after {
 
 .compare-table tbody tr:hover {
     background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- 预约演示标题 --- */
+.contact-title {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 2rem;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
