@@ -3,154 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>前店后院一体化解决方案白皮书 | 华创天诚</title>
+    <title>前店后院一体化解决方案 | 华创天诚</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.8; color: #333; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .header { text-align: center; margin-bottom: 40px; border-bottom: 3px solid #e74c3c; padding-bottom: 30px; }
-        .logo { font-size: 24px; font-weight: bold; color: #e74c3c; }
-        .title { font-size: 32px; margin: 20px 0; color: #2c3e50; }
-        .subtitle { font-size: 18px; color: #666; }
-        .download-hint { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; margin: 30px 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.8; 
+            color: #333;
+            background: linear-gradient(135deg, #ffeef8 0%, #fff5f5 50%, #f0f8ff 100%);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* 头部 */
+        .header { 
+            text-align: center; 
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            padding: 50px 30px;
+            border-radius: 30px;
+            color: white;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.3);
+        }
+        .logo { font-size: 18px; opacity: 0.9; letter-spacing: 2px; }
+        .title { font-size: 36px; margin: 20px 0 15px; font-weight: bold; }
+        .subtitle { font-size: 18px; opacity: 0.95; }
+        .badge { 
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        /* 区块通用 */
         .section { margin: 40px 0; }
-        .section-title { font-size: 24px; color: #e74c3c; margin-bottom: 20px; padding-left: 15px; border-left: 4px solid #e74c3c; }
-        .pain-box { background: #fff5f5; padding: 20px; border-radius: 8px; margin: 15px 0; }
-        .pain-box h4 { color: #e74c3c; margin-bottom: 10px; }
-        .solution-box { background: #f0fff0; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #27ae60; }
-        .case-card { border: 1px solid #ddd; border-radius: 12px; padding: 25px; margin: 20px 0; }
-        .case-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .case-name { font-size: 20px; font-weight: bold; color: #2c3e50; }
-        .case-tag { background: #e74c3c; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; }
-        .data-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
-        .data-item { text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px; }
-        .data-num { font-size: 28px; font-weight: bold; color: #e74c3c; }
-        .data-label { font-size: 14px; color: #666; margin-top: 5px; }
-        .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .compare-table th, .compare-table td { padding: 12px; border: 1px solid #ddd; text-align: left; }
-        .compare-table th { background: #2c3e50; color: white; }
-        .compare-table .highlight { background: #f0fff0; font-weight: bold; }
-        .quote { font-style: italic; color: #666; border-left: 3px solid #ccc; padding-left: 15px; margin: 15px 0; }
-        .cta-box { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { font-size: 24px; margin-bottom: 15px; }
-        .cta-btn { display: inline-block; background: white; color: #e74c3c; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 15px; }
-        .footer { text-align: center; padding: 30px; color: #666; border-top: 1px solid #ddd; margin-top: 40px; }
+        .section-title { 
+            font-size: 26px; 
+            color: #e74c3c; 
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 28px;
+            background: linear-gradient(180deg, #ff6b9d, #e74c3c);
+            border-radius: 3px;
+        }
+        
+        /* 什么是前店后院 */
+        .intro-box {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .intro-card {
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            padding: 25px;
+            border-radius: 16px;
+            border: 2px solid #ffe0e0;
+        }
+        .intro-card h4 { 
+            font-size: 20px; 
+            color: #e74c3c; 
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-card p { color: #666; line-height: 1.8; }
+        
+        /* 痛点 */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .pain-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border-left: 4px solid #ff6b9d;
+            transition: transform 0.3s;
+        }
+        .pain-card:hover { transform: translateY(-5px); }
+        .pain-card h4 { color: #e74c3c; margin-bottom: 12px; font-size: 17px; }
+        .pain-card p { color: #666; font-size: 14px; }
+        .pain-num {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+        
+        /* 解决方案 */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .solution-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b9d, #e74c3c, #ff6b9d);
+        }
+        .solution-card h4 { 
+            color: #2c3e50; 
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .solution-card h4 .icon {
+            font-size: 24px;
+        }
+        .solution-card ul { margin-left: 20px; color: #666; }
+        .solution-card li { margin: 8px 0; font-size: 14px; }
+        
+        /* 数据 */
+        .data-section {
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 50px 0;
+            color: white;
+        }
+        .data-title { text-align: center; font-size: 24px; margin-bottom: 30px; }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .data-item { 
+            text-align: center; 
+            background: rgba(255,255,255,0.15);
+            padding: 25px 15px;
+            border-radius: 16px;
+        }
+        .data-num { font-size: 36px; font-weight: bold; }
+        .data-label { font-size: 14px; opacity: 0.9; margin-top: 8px; }
+        .data-source { text-align: center; margin-top: 20px; opacity: 0.8; font-size: 13px; }
+        
+        /* 案例 */
+        .case-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            margin: 25px 0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .case-name { font-size: 24px; font-weight: bold; color: #2c3e50; }
+        .case-tag {
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 13px;
+        }
+        .case-info { color: #666; margin: 15px 0; }
+        .case-info strong { color: #2c3e50; }
+        .case-list { 
+            margin: 15px 0 15px 20px; 
+            color: #555;
+        }
+        .case-list li { margin: 8px 0; }
+        .case-list li::marker { color: #27ae60; }
+        .case-effect {
+            background: linear-gradient(135deg, #f0fff0, #e8f5e9);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            color: #27ae60;
+            font-weight: 500;
+        }
+        .case-quote {
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #ff6b9d;
+            color: #888;
+            font-style: italic;
+        }
+        
+        /* 对比表格 */
+        .compare-table-wrap {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        .compare-table-wrap h4 {
+            text-align: center;
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .compare-table th {
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .compare-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:nth-child(even) { background: #fafafa; }
+        .compare-table .highlight {
+            background: linear-gradient(135deg, #f0fff0, #e8f5e9);
+            font-weight: 600;
+            color: #27ae60;
+        }
+        
+        /* 华创背书 */
+        .credential-section {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+        }
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .credential-item {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border-radius: 16px;
+            border: 2px solid #ffe0e0;
+        }
+        .credential-num {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .credential-label { color: #666; margin-top: 8px; font-size: 14px; }
+        .credential-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .credential-list li {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            border-radius: 10px;
+            list-style: none;
+            color: #555;
+        }
+        .credential-list li::before {
+            content: '✓';
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, #ff6b9d, #e74c3c);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 20px 60px rgba(231, 76, 60, 0.4);
+        }
+        .cta-box h3 { font-size: 28px; margin-bottom: 15px; }
+        .cta-box p { opacity: 0.95; font-size: 16px; }
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #e74c3c;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* 底部 */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+        .footer p { margin: 5px 0; }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .intro-grid, .pain-grid, .solution-grid, .data-grid, .credential-grid {
+                grid-template-columns: 1fr;
+            }
+            .data-grid { grid-template-columns: repeat(2, 1fr); }
+            .title { font-size: 28px; }
+            .credential-list { grid-template-columns: 1fr; }
+        }
+        
+        /* 打印优化 */
         @media print {
+            body { background: white; }
+            .header { background: #e74c3c; box-shadow: none; }
             .cta-box { display: none; }
-            .download-hint { display: none; }
+            .pain-card:hover { transform: none; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        
+        <!-- 头部 -->
         <div class="header">
-            <div class="logo">💄 华创天诚</div>
-            <h1 class="title">前店后院一体化解决方案白皮书</h1>
-            <p class="subtitle">美业连锁数字化最佳实践 · 9年经验沉淀</p>
+            <div class="logo">💄 华创天诚 · 美业数字化专家</div>
+            <h1 class="title">前店后院一体化解决方案</h1>
+            <p class="subtitle">会员一体化 · 库存打通 · 绩效联动 · 私有化部署</p>
+            <div class="badge">9年美业沉淀 · 100+客户验证 · 850+门店覆盖</div>
         </div>
 
-        <div class="download-hint">
-            📥 可右键"打印"或"另存为PDF"保存本白皮书
-        </div>
-
-        <!-- 一、行业背景 -->
+        <!-- 一、什么是前店后院 -->
         <div class="section">
-            <h2 class="section-title">一、什么是"前店后院"？</h2>
-            <p>前店后院是美业的一种混合业态模式：</p>
-            <div class="pain-box">
-                <h4>🏪 前店：美妆零售区</h4>
-                <p>产品展示、开架试用、快速收银、无压力购物</p>
+            <h2 class="section-title">什么是"前店后院"？</h2>
+            <div class="intro-box">
+                <p style="font-size: 16px; color: #555;">前店后院是美业的一种混合业态模式，实现零售+服务的双轮驱动。</p>
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h4>🏪 前店 · 美妆零售</h4>
+                        <p>产品展示、开架试用、快速收银、无压力购物</p>
+                    </div>
+                    <div class="intro-card">
+                        <h4>💆 后院 · 美容护理</h4>
+                        <p>皮肤护理、面部SPA、体验式服务、深度转化</p>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; padding: 15px; background: #fff5f5; border-radius: 10px; color: #e74c3c; font-weight: 500;">
+                    💡 核心价值：前店引流获客，后院深度留存，客单价提升2倍+
+                </p>
             </div>
-            <div class="pain-box">
-                <h4>💆 后院：美容护理区</h4>
-                <p>皮肤护理、面部SPA、体验式服务、深度转化</p>
-            </div>
-            <p style="margin-top: 15px;"><strong>核心价值：</strong>前店引流获客，后院深度留存，客单价提升2倍+。</p>
         </div>
 
-        <!-- 二、痛点分析 -->
+        <!-- 二、痛点 -->
         <div class="section">
-            <h2 class="section-title">二、前店后院模式的5大痛点</h2>
-            
-            <div class="pain-box">
-                <h4>痛点1：会员数据"两张皮"</h4>
-                <p>前店POS一套会员系统，后院预约一套会员系统，积分不互通、等级不同步、消费记录分散。</p>
-                <p class="quote">"客人问'我卡里还有多少次'，店员要查两个系统才能回答，体验很差。"</p>
-            </div>
-
-            <div class="pain-box">
-                <h4>痛点2：库存数据不联动</h4>
-                <p>前店卖完商品，后院不知道；后院消耗耗材，前店库存不扣减。超卖、缺货、损耗难追踪。</p>
-                <p class="quote">"经常出现客人买的产品后院没货补，或者后院用完了前店还在卖。"</p>
-            </div>
-
-            <div class="pain-box">
-                <h4>痛点3：业绩核算像做奥数题</h4>
-                <p>导购卖产品提成、美容师做服务手工费、卡项分期消费分摊……手工Excel算3天，还经常出错。</p>
-                <p class="quote">"每个月对账要一周，员工绩效算不清楚，积极性大打折扣。"</p>
-            </div>
-
-            <div class="pain-box">
-                <h4>痛点4：总部看不到实时数据</h4>
-                <p>每家店一套账，月底对账要一周，决策永远滞后。扩张10家店，管理成本翻3倍。</p>
-                <p class="quote">"开5家店的时候还能管过来，开到10家就乱套了。"</p>
-            </div>
-
-            <div class="pain-box">
-                <h4>痛点5：SaaS按店收费，成本失控</h4>
-                <p>每开一家店就要多付一份钱，数据还在平台手里，导出还要额外付费。</p>
-                <p class="quote">"开10家店系统成本就是10倍，压力太大。数据在别人手里，心里不踏实。"</p>
+            <h2 class="section-title">前店后院模式的5大痛点</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h4><span class="pain-num">1</span>会员数据"两张皮"</h4>
+                    <p>前店POS一套会员系统，后院预约一套系统，积分不互通、等级不同步、消费记录分散。</p>
+                </div>
+                <div class="pain-card">
+                    <h4><span class="pain-num">2</span>库存数据不联动</h4>
+                    <p>前店卖完商品后院不知道，后院消耗耗材前店不扣减，超卖、缺货、损耗难追踪。</p>
+                </div>
+                <div class="pain-card">
+                    <h4><span class="pain-num">3</span>业绩核算像做奥数题</h4>
+                    <p>导购提成、美容师手工费、卡项分期分摊……手工Excel算3天，还经常出错。</p>
+                </div>
+                <div class="pain-card">
+                    <h4><span class="pain-num">4</span>总部看不到实时数据</h4>
+                    <p>每家店一套账，月底对账要一周，决策永远滞后。扩张10家店，管理成本翻3倍。</p>
+                </div>
+                <div class="pain-card">
+                    <h4><span class="pain-num">5</span>按店收费成本失控</h4>
+                    <p>每开一家店就要多付一份钱，数据还在平台手里，导出还要额外付费。</p>
+                </div>
             </div>
         </div>
 
         <!-- 三、解决方案 -->
         <div class="section">
-            <h2 class="section-title">三、华创解决方案：会员一体化 + 库存打通 + 绩效联动</h2>
-            
-            <div class="solution-box">
-                <h4>✅ 模块1：会员一体化</h4>
-                <p>一张会员卡，前店后院通用。积分、等级、消费记录实时同步。</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>会员在前店买产品，后院预约自动识别身份</li>
-                    <li>会员在后院做护理，前店POS可查消费记录</li>
-                    <li>积分通用，可在前店兑换商品，也可在后院兑换服务</li>
-                </ul>
-            </div>
-
-            <div class="solution-box">
-                <h4>✅ 模块2：库存打通</h4>
-                <p>前店后院库存统一管理，商品、耗材实时联动。</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>前店卖商品，系统自动扣减库存</li>
-                    <li>后院消耗耗材，同步扣减库存</li>
-                    <li>库存预警自动提醒，补货及时</li>
-                </ul>
-            </div>
-
-            <div class="solution-box">
-                <h4>✅ 模块3：绩效联动</h4>
-                <p>导购+美容师业绩联动计算，自动核算提成和手工费。</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>导购卖产品：按销售额计算提成</li>
-                    <li>美容师做服务：按服务项目和时长计算手工费</li>
-                    <li>跨岗位协作：导购引客到后院，业绩双算</li>
-                </ul>
-            </div>
-
-            <div class="solution-box">
-                <h4>✅ 模块4：私有化部署</h4>
-                <p>数据在你自己手里，不是平台手里。项目制收费，开10家店不用付10份钱。</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>数据本地存储，100%自主可控</li>
-                    <li>支持定制开发，千店千面</li>
-                    <li>一次投入，终身使用</li>
-                </ul>
+            <h2 class="section-title">华创解决方案</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h4><span class="icon">👥</span>会员一体化</h4>
+                    <ul>
+                        <li>一张会员卡，前店后院通用</li>
+                        <li>积分、等级、消费记录实时同步</li>
+                        <li>前店买产品，后院预约自动识别</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4><span class="icon">📦</span>库存打通</h4>
+                    <ul>
+                        <li>前店后院库存统一管理</li>
+                        <li>商品、耗材实时联动扣减</li>
+                        <li>库存预警自动提醒补货</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4><span class="icon">💰</span>绩效联动</h4>
+                    <ul>
+                        <li>导购+美容师业绩联动计算</li>
+                        <li>提成和手工费自动核算</li>
+                        <li>跨岗位协作业绩双算</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h4><span class="icon">🔐</span>私有化部署</h4>
+                    <ul>
+                        <li>数据在你自己手里</li>
+                        <li>支持定制开发，千店千面</li>
+                        <li>一次投入，终身使用</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- 四、价值数据 -->
-        <div class="section">
-            <h2 class="section-title">四、落地效果（嘉悦国际验证）</h2>
+        <!-- 四、数据 -->
+        <div class="data-section">
+            <h3 class="data-title">📈 落地效果（嘉悦国际验证）</h3>
             <div class="data-grid">
                 <div class="data-item">
                     <div class="data-num">3倍</div>
@@ -166,31 +483,29 @@
                 </div>
                 <div class="data-item">
                     <div class="data-num">2倍</div>
-                    <div class="data-label">客单价提升空间</div>
+                    <div class="data-label">客单价提升</div>
                 </div>
             </div>
-            <p style="text-align: center; color: #666; font-size: 14px;">数据来源：嘉悦国际落地案例，效果可验证</p>
+            <p class="data-source">基于真实客户案例，效果可验证</p>
         </div>
 
-        <!-- 五、典型案例 -->
+        <!-- 五、案例 -->
         <div class="section">
-            <h2 class="section-title">五、典型案例</h2>
-
+            <h2 class="section-title">典型案例</h2>
+            
             <div class="case-card">
                 <div class="case-header">
                     <div class="case-name">嘉悦国际</div>
                     <span class="case-tag">前店后院标杆</span>
                 </div>
-                <p><strong>客户背景：</strong>香港名品生活集成服务商，代理12大国际品牌（Natura Bissé、comfort zone等），前店后院直营模式。</p>
-                <p style="margin: 10px 0;"><strong>痛点：</strong>前后院会员不互通、零售+服务混合订单拆分困难、总部看不到实时数据。</p>
-                <p><strong>方案：</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>✓ 前后院会员统一管理</li>
-                    <li>✓ 混合订单自动拆分</li>
-                    <li>✓ 业财融合一体化</li>
+                <p class="case-info"><strong>背景：</strong>香港名品生活集成服务商，代理12大国际品牌，前店后院直营模式。</p>
+                <p class="case-info"><strong>痛点：</strong>前后院会员不互通、混合订单拆分困难、总部看不到实时数据。</p>
+                <ul class="case-list">
+                    <li>前后院会员统一管理</li>
+                    <li>混合订单自动拆分</li>
+                    <li>业财融合一体化</li>
                 </ul>
-                <p style="margin-top: 10px;"><strong>效果：</strong>会员复购率提升50%+，客单价翻倍。</p>
-                <p class="quote">"用了华创系统后，客人体验大幅提升，前后院联动让客单价直接翻倍。"</p>
+                <div class="case-effect">效果：会员复购率提升50%+，客单价翻倍</div>
             </div>
 
             <div class="case-card">
@@ -198,16 +513,14 @@
                     <div class="case-name">美肌工坊</div>
                     <span class="case-tag">850+门店连锁</span>
                 </div>
-                <p><strong>客户背景：</strong>科技美容连锁品牌，全国150+城市，850+连锁店，直营+加盟强管控模式。</p>
-                <p style="margin: 10px 0;"><strong>痛点：</strong>总部-分公司-门店三级管理复杂、加盟商数据隔离需求、权限划分精细化。</p>
-                <p><strong>方案：</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>✓ 总部-分公司-门店三级管理</li>
-                    <li>✓ 加盟商数据隔离，会员数据共享</li>
-                    <li>✓ 多角色权限精细化控制</li>
+                <p class="case-info"><strong>背景：</strong>科技美容连锁品牌，全国150+城市，850+连锁店，直营+加盟强管控。</p>
+                <p class="case-info"><strong>痛点：</strong>三级管理复杂、加盟商数据隔离需求、权限精细化。</p>
+                <ul class="case-list">
+                    <li>总部-分公司-门店三级管理</li>
+                    <li>加盟商数据隔离，会员数据共享</li>
+                    <li>多角色权限精细化控制</li>
                 </ul>
-                <p style="margin-top: 10px;"><strong>效果：</strong>覆盖850+门店，百万用户，数据看板实时同步。</p>
-                <p class="quote">"华创帮我们解决了850家店的数据统一问题，扩张再也无需担心管理失控。"</p>
+                <div class="case-effect">效果：覆盖850+门店，百万用户，数据看板实时同步</div>
             </div>
 
             <div class="case-card">
@@ -215,110 +528,115 @@
                     <div class="case-name">娇兰佳人</div>
                     <span class="case-tag">2100+门店</span>
                 </div>
-                <p><strong>客户背景：</strong>全国知名美妆连锁品牌，2100+门店，小程序活跃用户超800万。</p>
-                <p style="margin: 10px 0;"><strong>痛点：</strong>预约管理分散、核销效率低、会员数据不统一。</p>
-                <p><strong>方案：</strong></p>
-                <ul style="margin-left: 20px;">
-                    <li>✓ 预约在线化100%</li>
-                    <li>✓ 核销流程标准化</li>
-                    <li>✓ 会员数据统一管理</li>
+                <p class="case-info"><strong>背景：</strong>全国知名美妆连锁品牌，2100+门店，小程序活跃用户超800万。</p>
+                <p class="case-info"><strong>痛点：</strong>预约管理分散、核销效率低、会员数据不统一。</p>
+                <ul class="case-list">
+                    <li>预约在线化100%</li>
+                    <li>核销流程标准化</li>
+                    <li>会员数据统一管理</li>
                 </ul>
-                <p style="margin-top: 10px;"><strong>效果：</strong>预约在线化100%，核销效率提升90%。</p>
+                <div class="case-effect">效果：预约在线化100%，核销效率提升90%</div>
             </div>
         </div>
 
-        <!-- 六、竞品对比 -->
+        <!-- 六、对比 -->
         <div class="section">
-            <h2 class="section-title">六、与竞品对比</h2>
-            <table class="compare-table">
-                <thead>
-                    <tr>
-                        <th>对比维度</th>
-                        <th>有赞/博卡</th>
-                        <th class="highlight">华创天诚</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>部署方式</td>
-                        <td>SaaS租用</td>
-                        <td class="highlight">✅ 私有化部署</td>
-                    </tr>
-                    <tr>
-                        <td>数据归属</td>
-                        <td>平台托管</td>
-                        <td class="highlight">✅ 100%自主</td>
-                    </tr>
-                    <tr>
-                        <td>收费模式</td>
-                        <td>按店收费</td>
-                        <td class="highlight">✅ 项目制一次付</td>
-                    </tr>
-                    <tr>
-                        <td>前店后院</td>
-                        <td>❌ 不支持</td>
-                        <td class="highlight">✅ 一体化原生</td>
-                    </tr>
-                    <tr>
-                        <td>品项疗程</td>
-                        <td>❌ 不支持</td>
-                        <td class="highlight">✅ 原生支持</td>
-                    </tr>
-                    <tr>
-                        <td>定制能力</td>
-                        <td>标准化产品</td>
-                        <td class="highlight">✅ 千店千面</td>
-                    </tr>
-                    <tr>
-                        <td>交付速度</td>
-                        <td>月级</td>
-                        <td class="highlight">✅ 天级（AI Coding）</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="compare-table-wrap">
+                <h4>与传统SaaS对比</h4>
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>对比维度</th>
+                            <th>传统SaaS</th>
+                            <th>华创天诚</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>部署方式</td>
+                            <td>SaaS租用</td>
+                            <td class="highlight">✅ 私有化部署</td>
+                        </tr>
+                        <tr>
+                            <td>数据归属</td>
+                            <td>平台托管</td>
+                            <td class="highlight">✅ 100%自主</td>
+                        </tr>
+                        <tr>
+                            <td>收费模式</td>
+                            <td>按店收费</td>
+                            <td class="highlight">✅ 项目制一次付</td>
+                        </tr>
+                        <tr>
+                            <td>前店后院</td>
+                            <td>❌ 不支持</td>
+                            <td class="highlight">✅ 一体化原生</td>
+                        </tr>
+                        <tr>
+                            <td>品项疗程</td>
+                            <td>❌ 不支持</td>
+                            <td class="highlight">✅ 原生支持</td>
+                        </tr>
+                        <tr>
+                            <td>定制能力</td>
+                            <td>标准化产品</td>
+                            <td class="highlight">✅ 千店千面</td>
+                        </tr>
+                        <tr>
+                            <td>交付速度</td>
+                            <td>月级</td>
+                            <td class="highlight">✅ 天级（AI Coding）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <!-- 七、华创背书 -->
+        <!-- 七、背书 -->
         <div class="section">
-            <h2 class="section-title">七、为什么选择华创天诚？</h2>
-            <div class="data-grid">
-                <div class="data-item">
-                    <div class="data-num">9年</div>
-                    <div class="data-label">美业沉淀</div>
+            <div class="credential-section">
+                <h2 class="section-title">为什么选择华创天诚？</h2>
+                <div class="credential-grid">
+                    <div class="credential-item">
+                        <div class="credential-num">9年</div>
+                        <div class="credential-label">美业沉淀</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-num">100+</div>
+                        <div class="credential-label">企业客户</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-num">1800+</div>
+                        <div class="credential-label">系统功能</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-num">20+</div>
+                        <div class="credential-label">专利软著</div>
+                    </div>
                 </div>
-                <div class="data-item">
-                    <div class="data-num">100+</div>
-                    <div class="data-label">企业客户</div>
-                </div>
-                <div class="data-item">
-                    <div class="data-num">1800+</div>
-                    <div class="data-label">系统功能</div>
-                </div>
-                <div class="data-item">
-                    <div class="data-num">20+</div>
-                    <div class="data-label">专利软著</div>
-                </div>
+                <ul class="credential-list">
+                    <li>国家高新技术企业、双软认证</li>
+                    <li>私有化部署，数据100%自主</li>
+                    <li>AI Coding，天级交付</li>
+                    <li>9年美业专注，深谙行业痛点</li>
+                </ul>
             </div>
-            <ul style="margin: 20px 0 0 20px;">
-                <li>✓ 国家高新技术企业、双软认证</li>
-                <li>✓ 私有化部署，数据100%自主</li>
-                <li>✓ AI Coding，天级交付</li>
-                <li>✓ 9年美业专注，深谙行业痛点</li>
-            </ul>
         </div>
 
         <!-- CTA -->
         <div class="cta-box">
             <h3>想要了解更多？</h3>
             <p>预约免费诊断，获取专属解决方案</p>
-            <p style="margin-top: 10px; font-size: 14px;">电话：0755-82545087 | 工作日 9:00-18:00</p>
+            <p style="margin-top: 15px; opacity: 0.9;">电话：0755-82545087 | 工作日 9:00-18:00</p>
             <a href="https://ericlaotian.github.io#contact" class="cta-btn">预约免费诊断</a>
         </div>
 
+        <!-- 底部 -->
         <div class="footer">
             <p>© 2026 深圳市华创天诚科技有限公司</p>
-            <p style="margin-top: 10px;">国家高新技术企业 · 双软认证 · 20+专利软著</p>
+            <p>国家高新技术企业 · 双软认证 · 20+专利软著</p>
         </div>
+
     </div>
 </body>
 </html>
