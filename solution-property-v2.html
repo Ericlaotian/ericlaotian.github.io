@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公寓/园区/商圈 数字化解决方案 | 华创天诚</title>
+    <meta name="description" content="华创天诚公寓/园区/商圈数字化解决方案，集管理、服务、运营、硬件于一体的全链路闭环系统。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-v2.css">
+    <style>
+        :root { --section-padding: 8rem; --glow-cyan: 0 0 60px rgba(0, 212, 255, 0.15); --glow-green: 0 0 60px rgba(0, 229, 160, 0.12); }
+        .hero-enhanced { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10rem 2rem 6rem; position: relative; overflow: hidden; }
+        .hero-enhanced::before { content: ''; position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(0, 119, 255, 0.12) 0%, transparent 60%); pointer-events: none; z-index: 0; }
+        .hero-enhanced::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px; background: linear-gradient(to top, var(--bg-primary), transparent); pointer-events: none; z-index: 1; }
+        .hero-title-large { font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; color: var(--text-primary); letter-spacing: -2px; line-height: 1.05; margin-bottom: 1.5rem; position: relative; z-index: 2; }
+        .hero-title-large .gradient-text { background: linear-gradient(135deg, #00D4FF 0%, #00E5A0 50%, #0077FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-sub-large { font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--text-secondary); max-width: 600px; margin: 0 auto 1rem; line-height: 1.8; position: relative; z-index: 2; }
+        .hero-tagline { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.6rem 1.5rem; background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 100px; font-size: 0.9rem; color: var(--accent-cyan); margin-bottom: 3rem; position: relative; z-index: 2; }
+        .hero-stats-enhanced { display: flex; justify-content: center; gap: 4rem; margin: 3.5rem 0; position: relative; z-index: 2; }
+        .stat-box { text-align: center; }
+        .stat-num-animated { font-family: var(--font-display); font-size: 3.5rem; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 0.5rem; }
+        .stat-num-animated.cyan { color: var(--accent-cyan); }
+        .stat-num-animated.green { color: var(--accent-green); }
+        .stat-label-enhanced { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+        .section-glow { position: relative; }
+        .section-glow::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(0, 119, 255, 0.04) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        .section-content { position: relative; z-index: 1; }
+        .section-divider-gradient { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent); margin: 0 auto 4rem; }
+        .arch-section-enhanced { padding: var(--section-padding) 2rem; position: relative; }
+        .arch-container-enhanced { max-width: 1100px; margin: 0 auto; }
+        .arch-svg-container { background: linear-gradient(180deg, rgba(13, 19, 33, 0.8), rgba(8, 12, 20, 0.9)); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 3rem 2rem; position: relative; overflow: hidden; }
+        .arch-svg-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent); }
+        .arch-detail-section { margin-top: 3rem; display: grid; gap: 2rem; }
+        .arch-detail-layer { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 2rem; }
+        .arch-detail-title { font-size: 1rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .arch-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .arch-detail-item { display: flex; gap: 1rem; padding: 1rem; background: rgba(0, 0, 0, 0.2); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.03); transition: all 0.3s; }
+        .arch-detail-item:hover { border-color: rgba(0, 212, 255, 0.2); background: rgba(0, 212, 255, 0.03); }
+        .arch-detail-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(0, 212, 255, 0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .arch-detail-icon svg { width: 24px; height: 24px; }
+        .arch-detail-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem; }
+        .arch-detail-content p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+        .role-card-enhanced { background: linear-gradient(180deg, rgba(13, 19, 33, 0.9), rgba(8, 12, 20, 0.95)); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+        .role-card-enhanced::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent-gradient); opacity: 0; transition: opacity 0.4s; }
+        .role-card-enhanced:hover { border-color: var(--border-hover); transform: translateY(-8px); box-shadow: var(--glow-cyan), 0 25px 60px rgba(0, 0, 0, 0.4); }
+        .role-card-enhanced:hover::before { opacity: 1; }
+        .role-icon-large { width: 80px; height: 80px; margin: 0 auto 1.5rem; border-radius: 20px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 119, 255, 0.05)); display: flex; align-items: center; justify-content: center; }
+        .role-icon-large svg { width: 40px; height: 40px; }
+        .role-name-enhanced { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .role-sub-enhanced { font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 1.5rem; font-weight: 500; }
+        .role-scenes-enhanced { text-align: left; list-style: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); }
+        .role-scenes-enhanced li { font-size: 0.88rem; color: var(--text-secondary); padding: 0.5rem 0; padding-left: 1.2rem; position: relative; line-height: 1.6; }
+        .role-scenes-enhanced li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 5px; height: 5px; background: var(--accent-cyan); border-radius: 50%; }
+        .role-platform-enhanced { display: inline-block; margin-top: 1.2rem; font-size: 0.75rem; padding: 0.4rem 1rem; background: rgba(0, 229, 160, 0.08); border: 1px solid rgba(0, 229, 160, 0.2); border-radius: 100px; color: var(--accent-green); font-weight: 600; }
+        .adv-card-enhanced { background: linear-gradient(180deg, rgba(13, 19, 33, 0.9), rgba(8, 12, 20, 0.95)); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); position: relative; overflow: hidden; }
+        .adv-card-enhanced:hover { border-color: var(--border-hover); transform: translateY(-5px); box-shadow: var(--glow-cyan), 0 20px 50px rgba(0, 0, 0, 0.35); }
+        .adv-card-enhanced.full-width { grid-column: span 2; }
+        .adv-header { display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .adv-num-large { font-family: var(--font-mono); font-size: 4rem; font-weight: 800; color: rgba(0, 212, 255, 0.08); line-height: 1; flex-shrink: 0; }
+        .adv-icon-box { width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 119, 255, 0.06)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .adv-icon-box svg { width: 28px; height: 28px; }
+        .adv-title-enhanced { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); line-height: 1.4; }
+        .adv-content-block { margin-top: 1rem; }
+        .adv-content-block h5 { font-size: 0.9rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.5rem; margin-top: 1.2rem; }
+        .adv-content-block h5:first-child { margin-top: 0; }
+        .adv-content-block p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8; }
+        .adv-tags-enhanced { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); }
+        .adv-tag-enhanced { font-size: 0.75rem; padding: 0.35rem 0.9rem; background: rgba(0, 212, 255, 0.06); border: 1px solid rgba(0, 212, 255, 0.12); border-radius: 100px; color: var(--accent-cyan); font-weight: 500; }
+        .case-card-enhanced { background: linear-gradient(180deg, rgba(13, 19, 33, 0.9), rgba(8, 12, 20, 0.95)); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+        .case-card-enhanced:hover { border-color: rgba(0, 229, 160, 0.35); transform: translateY(-6px); box-shadow: var(--glow-green), 0 20px 50px rgba(0, 0, 0, 0.35); }
+        .case-icon-large { width: 90px; height: 90px; margin: 0 auto 1.5rem; border-radius: 22px; background: linear-gradient(135deg, rgba(0, 229, 160, 0.1), rgba(0, 196, 160, 0.05)); display: flex; align-items: center; justify-content: center; }
+        .case-icon-large svg { width: 45px; height: 45px; }
+        .case-name-enhanced { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem; }
+        .case-type-enhanced { font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 1.5rem; font-weight: 500; }
+        .case-results-enhanced { text-align: left; list-style: none; }
+        .case-results-enhanced li { font-size: 0.88rem; color: var(--text-secondary); padding: 0.5rem 0; padding-left: 1.5rem; position: relative; line-height: 1.6; }
+        .case-results-enhanced li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-green); font-weight: bold; }
+        .value-section-enhanced { background: linear-gradient(180deg, rgba(13, 19, 33, 0.95), rgba(8, 12, 20, 0.98)); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 4rem 3rem; position: relative; overflow: hidden; }
+        .value-section-enhanced::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.4), transparent); }
+        .value-intro { text-align: center; font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 3rem; line-height: 1.9; }
+        .value-intro .highlight { color: var(--accent-cyan); font-weight: 600; }
+        .value-split-enhanced { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .value-box-enhanced { padding: 2.5rem; border-radius: 18px; border: 1px solid; }
+        .value-box-enhanced.b端 { background: rgba(0, 119, 255, 0.04); border-color: rgba(0, 119, 255, 0.15); }
+        .value-box-enhanced.c端 { background: rgba(0, 229, 160, 0.04); border-color: rgba(0, 229, 160, 0.15); }
+        .value-box-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .value-box-icon-large { width: 60px; height: 60px; border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .value-box-enhanced.b端 .value-box-icon-large { background: rgba(0, 119, 255, 0.1); }
+        .value-box-enhanced.c端 .value-box-icon-large { background: rgba(0, 229, 160, 0.1); }
+        .value-box-icon-large svg { width: 30px; height: 30px; }
+        .value-box-title-enhanced { font-size: 1.2rem; font-weight: 700; }
+        .value-box-enhanced.b端 .value-box-title-enhanced { color: var(--accent-blue); }
+        .value-box-enhanced.c端 .value-box-title-enhanced { color: var(--accent-green); }
+        .value-features-enhanced { list-style: none; }
+        .value-features-enhanced li { font-size: 0.9rem; color: var(--text-secondary); padding: 0.6rem 0; padding-left: 1.5rem; position: relative; line-height: 1.6; }
+        .value-box-enhanced.b端 .value-features-enhanced li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-blue); font-weight: bold; }
+        .value-box-enhanced.c端 .value-features-enhanced li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-green); font-weight: bold; }
+        .cta-section-enhanced { text-align: center; padding: 8rem 2rem; position: relative; }
+        .cta-section-enhanced::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(0, 212, 255, 0.08) 0%, transparent 70%); pointer-events: none; }
+        .cta-title-enhanced { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--text-primary); margin-bottom: 1rem; position: relative; z-index: 1; }
+        .cta-desc-enhanced { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; position: relative; z-index: 1; }
+        @media (max-width: 1024px) { .adv-card-enhanced.full-width { grid-column: span 1; } .value-split-enhanced { grid-template-columns: 1fr; } .hero-stats-enhanced { gap: 2rem; } }
+        @media (max-width: 768px) { .hero-enhanced { padding: 8rem 1.5rem 4rem; } .hero-stats-enhanced { flex-direction: column; gap: 1.5rem; } .stat-divider { display: none; } .arch-detail-grid { grid-template-columns: 1fr; } .adv-header { flex-direction: column; gap: 1rem; } .adv-num-large { font-size: 3rem; } .value-section-enhanced { padding: 2.5rem 1.5rem; } .cta-section-enhanced { padding: 5rem 1.5rem; } }
+        @keyframes countUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .stat-num-animated { animation: countUp 0.6s ease-out forwards; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero-enhanced">
+        <div class="hero-tagline"><span>🏠</span> 公寓 / 园区 / 商圈 数字化解决方案</div>
+        <h1 class="hero-title-large">资产运营<br><span class="gradient-text">全链路数字化</span></h1>
+        <p class="hero-sub-large">集「管理 · 服务 · 运营 · 硬件」于一体<br>一套系统覆盖公寓/园区/商圈全部运营场景</p>
+        <p class="hero-sub-large" style="font-size: 1rem; color: var(--text-muted);">私有化部署，数据100%自主</p>
+        <div class="hero-stats-enhanced">
+            <div class="stat-box"><div class="stat-num-animated cyan">6</div><div class="stat-label-enhanced">核心业务系统</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat-box"><div class="stat-num-animated">4</div><div class="stat-label-enhanced">用户角色覆盖</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat-box"><div class="stat-num-animated green">3+</div><div class="stat-label-enhanced">落地项目验证</div></div>
+        </div>
+        <div class="hero-cta" style="position:relative;z-index:2;">
+            <a href="index.html#contact" class="btn btn-primary">📅 预约演示</a>
+            <a href="#advantages" class="btn btn-secondary">了解核心优势 →</a>
+        </div>
+    </header>
+
+    <!-- 系统架构 -->
+    <section class="arch-section-enhanced section-glow" id="architecture">
+        <div class="section-content arch-container-enhanced">
+            <div class="section-label">System Architecture</div>
+            <h2 class="section-title">系统组成架构</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">这套全链路数字化解决方案并非零散的多套系统，而是一个统一的中台化架构，由底层基础设施、业务中台和前端应用组成。</p>
+
+            <!-- SVG架构图 -->
+            <div class="arch-svg-container">
+                <svg viewBox="0 0 900 420" style="display:block;margin:0 auto;max-width:100%;">
+                    <defs>
+                        <linearGradient id="gL1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0D2A4A"/><stop offset="100%" style="stop-color:#0A1F3A"/></linearGradient>
+                        <linearGradient id="gL2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0A2040"/><stop offset="100%" style="stop-color:#081830"/></linearGradient>
+                        <linearGradient id="gC" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#00D4FF"/><stop offset="100%" style="stop-color:#0077FF"/></linearGradient>
+                        <linearGradient id="gG" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#00E5A0"/><stop offset="100%" style="stop-color:#00C4A0"/></linearGradient>
+                    </defs>
+                    <!-- 底层基础设施 -->
+                    <text x="450" y="28" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(0,212,255,0.5)" text-anchor="middle" letter-spacing="2">━━━ 底层基础设施 ━━━</text>
+                    <rect x="50" y="40" width="250" height="70" rx="12" fill="url(#gL1)" stroke="rgba(0,212,255,0.15)"/>
+                    <circle cx="85" cy="75" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.25)"/>
+                    <path d="M75 80 Q80 70 90 70 Q97 70 100 75 Q105 75 105 80 Q105 85 97 85 L80 85 Q72 85 72 80 Q72 78 75 78" fill="none" stroke="#00D4FF" stroke-width="1.5"/>
+                    <text x="110" y="72" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFF">云化基础设施</text>
+                    <text x="110" y="88" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">阿里云服务器 · 高可用 · 弹性扩展</text>
+                    
+                    <rect x="325" y="40" width="250" height="70" rx="12" fill="url(#gL1)" stroke="rgba(0,212,255,0.15)"/>
+                    <circle cx="360" cy="75" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.25)"/>
+                    <ellipse cx="360" cy="70" rx="10" ry="5" fill="none" stroke="#00D4FF" stroke-width="1.5"/>
+                    <path d="M350 70 L350 82 Q360 90 370 82 L370 70" fill="none" stroke="#00D4FF" stroke-width="1.5"/>
+                    <text x="385" y="72" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFF">数据中台</text>
+                    <text x="385" y="88" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">统一数据资产 · 清洗 · 建模 · 服务</text>
+                    
+                    <rect x="600" y="40" width="250" height="70" rx="12" fill="url(#gL1)" stroke="rgba(0,212,255,0.15)"/>
+                    <circle cx="635" cy="75" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.25)"/>
+                    <rect x="626" y="66" width="5" height="14" rx="1" fill="#00D4FF"/>
+                    <rect x="633" y="62" width="5" height="18" rx="1" fill="#00D4FF"/>
+                    <rect x="640" y="68" width="5" height="12" rx="1" fill="#00D4FF"/>
+                    <text x="660" y="72" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFF">大数据支撑</text>
+                    <text x="660" y="88" font-family="Inter,sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">海量存储 · 流批一体 · 实时分析</text>
+                    
+                    <!-- 连接线 -->
+                    <path d="M450 110 L450 145" stroke="url(#gC)" stroke-width="2" stroke-dasharray="5,3"/>
+                    <circle cx="450" cy="127" r="4" fill="#00D4FF" opacity="0.7"/>
+                    
+                    <!-- 业务中台 -->
+                    <text x="450" y="162" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="rgba(0,212,255,0.5)" text-anchor="middle" letter-spacing="2">━━━ 业务中台核心系统 ━━━</text>
+                    
+                    <!-- 六个系统卡片 -->
+                    <g transform="translate(30, 175)">
+                        <rect width="130" height="95" rx="10" fill="url(#gL2)" stroke="rgba(0,212,255,0.12)"/>
+                        <rect width="130" height="2" fill="url(#gC)" opacity="0.6"/>
+                        <rect x="15" y="20" width="18" height="14" rx="2" fill="none" stroke="#00D4FF" stroke-width="1.2"/>
+                        <rect x="17" y="22" width="4" height="4" fill="#00D4FF" opacity="0.5"/><rect x="23" y="22" width="4" height="4" fill="#00D4FF" opacity="0.5"/>
+                        <rect x="17" y="28" width="4" height="4" fill="#00D4FF" opacity="0.5"/><rect x="23" y="28" width="4" height="4" fill="#00D4FF" opacity="0.5"/>
+                        <text x="65" y="52" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">房源与资产管理</text>
+                        <text x="65" y="66" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">项目·楼栋·房型·房间</text>
+                        <text x="65" y="80" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">全生命周期管控</text>
+                    </g>
+                    <g transform="translate(170, 175)">
+                        <rect width="130" height="95" rx="10" fill="url(#gL2)" stroke="rgba(0,212,255,0.12)"/>
+                        <rect width="130" height="2" fill="url(#gC)" opacity="0.6"/>
+                        <rect x="12" y="16" width="16" height="20" rx="1" fill="none" stroke="#00D4FF" stroke-width="1.2"/>
+                        <path d="M12 20 L28 20 M12 24 L28 24 M12 28 L28 28" stroke="#00D4FF" stroke-width="0.8" opacity="0.5"/>
+                        <text x="65" y="52" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">租务与合同系统</text>
+                        <text x="65" y="66" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">签约·续约·换租</text>
+                        <text x="65" y="80" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">转租·退租全流程</text>
+                    </g>
+                    <g transform="translate(310, 175)">
+                        <rect width="130" height="95" rx="10" fill="url(#gL2)" stroke="rgba(0,212,255,0.12)"/>
+                        <rect width="130" height="2" fill="url(#gC)" opacity="0.6"/>
+                        <circle cx="20" cy="26" r="10" fill="none" stroke="#00D4FF" stroke-width="1.2"/>
+                        <text x="20" y="30" font-family="Inter,sans-serif" font-size="10" fill="#00D4FF" text-anchor="middle">¥</text>
+                        <text x="65" y="52" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">财务计费系统</text>
+                        <text x="65" y="66" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">账单·缴费·发票</text>
+                        <text x="65" y="80" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">活动报名费管理</text>
+                    </g>
+                    <g transform="translate(450, 175)">
+                        <rect width="140" height="95" rx="10" fill="url(#gL2)" stroke="rgba(0,212,255,0.12)"/>
+                        <rect width="140" height="2" fill="url(#gC)" opacity="0.6"/>
+                        <polygon points="20,16 32,36 8,36" fill="none" stroke="#00D4FF" stroke-width="1.2"/>
+                        <circle cx="20" cy="26" r="6" fill="none" stroke="#00D4FF" stroke-width="0.8"/>
+                        <text x="70" y="52" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#FFF" text-anchor="middle">智能物联网 IoT</text>
+                        <text x="70" y="66" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">门禁·门锁·水电表</text>
+                        <text x="70" y="80" font-family="Inter,sans-serif" font-size="8" fill="rgba(255,255,255,0.35)" text-anchor="middle">硬件管理模块</text>
+                    </g>
+                    <g transform="translate(600, 175)">
+                        <rect width="130" height="95" rx="10" fill="url(#gL2)" stroke="rgba(0,212,255,0.12)"/>
+                        <rect width="130" height="2" fill="url(#gC)" opacity="0.6"/>
+                        <circle cx="20" cy="26" r="9" fill="none" stroke="#00D4FF" stroke-width="1.2"/>
+                        <path d="M14 30 A8 8 0 0 1 26 26" fill="none" stroke="#00D4FF" stroke-width="1"/>
+                        <text x="65" y="52" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#FFF" text-anchor="
