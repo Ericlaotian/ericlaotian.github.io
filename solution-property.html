@@ -7,460 +7,317 @@
     <meta name="description" content="华创天诚公寓/园区/商圈数字化解决方案，集管理、服务、运营、硬件于一体的全链路闭环系统。支持私有化部署，数据100%自主。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Long+Cang&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-v2.css">
     <style>
-        /* ===== Hero ===== */
+        /* ===== 方案页专用样式 ===== */
         .hero-property {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 7rem 2rem 3rem;
+            padding: 8rem 2rem 4rem;
             position: relative;
-            background: linear-gradient(180deg, rgba(39, 77, 124, 0.15) 0%, transparent 100%);
         }
 
-        .hero-property .brand-badge {
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            background: linear-gradient(135deg, #4a90d9, #357abd);
-            color: #fff;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-family: 'Long Cang', cursive;
-            margin-bottom: 1.5rem;
+        .hero-property .hero-badge {
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: var(--accent-cyan);
         }
 
-        .hero-property h1 {
-            font-family: 'ZCOOL KuaiLe', cursive;
-            font-size: 3rem;
-            color: #fff;
-            letter-spacing: 4px;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-property .subtitle {
-            font-family: 'ZCOOL XiaoWei', cursive;
-            font-size: 1.3rem;
-            color: #a8d8ff;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
+        .hero-property .hero-title .accent {
+            background: linear-gradient(135deg, #00D4FF, #00E5A0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-property .hero-desc {
-            color: rgba(255,255,255,0.65);
-            font-size: 1rem;
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto;
             line-height: 1.8;
         }
 
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            font-family: 'Long Cang', cursive;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px dashed;
-        }
-
-        .cta-btn.primary {
-            background: linear-gradient(135deg, #4a90d9, #357abd);
-            border-color: #4a90d9;
-            color: #fff;
-        }
-
-        .cta-btn.primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.35);
-        }
-
-        .cta-btn.secondary {
-            background: transparent;
-            border-color: rgba(255,255,255,0.4);
-            color: rgba(255,255,255,0.8);
-        }
-
-        .cta-btn.secondary:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-3px);
-        }
-
-        /* ===== Section通用 ===== */
-        .section {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* ===== 系统架构 SVG ===== */
+        .arch-section {
             padding: 5rem 2rem;
             position: relative;
             z-index: 1;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .chalk-title {
-            font-family: 'ZCOOL KuaiLe', cursive;
-            font-size: 2.2rem;
-            color: #fff;
-            display: inline-block;
-            letter-spacing: 3px;
-        }
-
-        .chalk-line {
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg,
-                transparent,
-                #4a90d9,
-                #a8d8ff,
-                #26de81,
-                transparent
-            );
-            margin: 1rem auto 0;
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-
-        /* ===== 系统架构 ===== */
-        .architecture-wrap {
-            background: rgba(255,255,255,0.03);
-            border: 2px dashed rgba(74,144,217,0.3);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-        }
-
-        .arch-layer {
-            margin-bottom: 2rem;
-        }
-
-        .arch-layer:last-child {
-            margin-bottom: 0;
-        }
-
-        .arch-layer-title {
-            font-family: 'Long Cang', cursive;
-            font-size: 0.9rem;
-            color: #4a90d9;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .arch-cards {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .arch-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px dashed rgba(255,255,255,0.15);
-            border-radius: 10px;
-            padding: 0.8rem 1.2rem;
-            text-align: center;
-            min-width: 120px;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .arch-card:hover {
-            border-color: #4a90d9;
-            background: rgba(74,144,217,0.1);
-            transform: translateY(-3px);
-        }
-
-        .arch-card .arch-icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .arch-card .arch-name {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .arch-card.bottom .arch-name {
-            font-size: 0.75rem;
-        }
-
-        .arch-arrow-down {
-            text-align: center;
-            font-size: 1.5rem;
-            color: rgba(74,144,217,0.5);
-            margin: 0.5rem 0;
-        }
-
-        .arch-middle .arch-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem;
-            max-width: 800px;
+        .arch-container {
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .arch-middle .arch-card {
-            padding: 1rem;
+        .arch-svg-wrap {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            overflow-x: auto;
         }
 
-        .arch-middle .arch-name {
-            font-size: 0.85rem;
+        .arch-svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
         }
 
         /* ===== 用户角色 ===== */
-        .roles-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
         .role-card {
-            background: rgba(255,255,255,0.04);
-            border: 2px dashed rgba(74,144,217,0.25);
-            border-radius: 12px;
-            padding: 1.8rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .role-card:hover {
-            border-color: #4a90d9;
-            background: rgba(74,144,217,0.08);
+            border-color: var(--border-hover);
             transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 30px rgba(0,212,255,0.05);
         }
 
+        .role-card:hover::before { opacity: 1; }
+
         .role-icon {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
         .role-name {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.2rem;
-            color: #4a90d9;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
         }
 
-        .role-desc {
-            color: rgba(255,255,255,0.6);
+        .role-sub {
             font-size: 0.8rem;
-            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .role-scenes {
+            text-align: left;
+            list-style: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .role-scenes li {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            padding: 0.3rem 0;
+            padding-left: 1rem;
+            position: relative;
             line-height: 1.5;
         }
 
-        .role-scenarios {
-            text-align: left;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed rgba(255,255,255,0.1);
-        }
-
-        .role-scenarios li {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.78rem;
-            padding: 0.25rem 0;
-            list-style: none;
-            position: relative;
-            padding-left: 1rem;
-            line-height: 1.4;
-        }
-
-        .role-scenarios li::before {
-            content: '›';
+        .role-scenes li::before {
+            content: '';
             position: absolute;
             left: 0;
-            color: #4a90d9;
-            font-weight: bold;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
         }
 
         .role-platform {
-            margin-top: 0.8rem;
-            font-size: 0.7rem;
-            color: #26de81;
-            background: rgba(38,222,129,0.08);
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
             display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.72rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 229, 160, 0.08);
+            border: 1px solid rgba(0, 229, 160, 0.2);
+            border-radius: 100px;
+            color: var(--accent-green);
+            font-weight: 500;
         }
 
         /* ===== 核心优势 ===== */
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
         .adv-card {
-            background: rgba(255,255,255,0.04);
-            border: 2px dashed rgba(74,144,217,0.2);
-            border-radius: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
             padding: 2rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .adv-card:hover {
-            border-color: #4a90d9;
-            background: rgba(74,144,217,0.06);
+            border-color: var(--border-hover);
             transform: translateY(-3px);
         }
 
-        .adv-card.full-width {
-            grid-column: span 2;
+        .adv-num {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(0, 212, 255, 0.12);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1;
         }
 
-        .adv-num {
-            font-family: 'Long Cang', cursive;
-            font-size: 2.5rem;
-            color: rgba(74,144,217,0.3);
-            margin-bottom: 0.5rem;
+        .adv-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .adv-title {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.2rem;
-            color: #a8d8ff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 0.8rem;
-        }
-
-        .adv-title-main {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.4rem;
-            color: #4a90d9;
-            margin-bottom: 0.5rem;
+            line-height: 1.4;
         }
 
         .adv-desc {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .adv-sub {
+            font-size: 0.82rem;
+            color: var(--text-muted);
             line-height: 1.7;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(0,212,255,0.2);
         }
 
         .adv-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
+            gap: 0.4rem;
         }
 
         .adv-tag {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.7rem;
-            background: rgba(74,144,217,0.12);
-            border: 1px dashed rgba(74,144,217,0.3);
-            border-radius: 12px;
-            color: #a8d8ff;
+            font-size: 0.72rem;
+            padding: 0.25rem 0.7rem;
+            background: rgba(0, 212, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.12);
+            border-radius: 100px;
+            color: var(--accent-cyan);
+            font-weight: 500;
         }
 
         /* ===== 客户案例 ===== */
-        .cases-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
         .case-card {
-            background: rgba(255,255,255,0.04);
-            border: 2px dashed rgba(74,144,217,0.2);
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2rem;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .case-card:hover {
-            border-color: #26de81;
-            background: rgba(38,222,129,0.05);
-            transform: translateY(-3px);
+            border-color: rgba(0, 229, 160, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
 
         .case-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
 
         .case-name {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
         }
 
         .case-type {
-            font-size: 0.8rem;
-            color: #4a90d9;
+            font-size: 0.78rem;
+            color: var(--accent-cyan);
             margin-bottom: 1rem;
+            font-weight: 500;
         }
 
-        .case-result {
+        .case-results {
             text-align: left;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.6;
+            list-style: none;
         }
 
-        .case-result li {
-            list-style: none;
-            padding: 0.2rem 0;
-            padding-left: 1rem;
+        .case-results li {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            padding: 0.35rem 0;
+            padding-left: 1.2rem;
             position: relative;
         }
 
-        .case-result li::before {
+        .case-results li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #26de81;
+            color: var(--accent-green);
+            font-weight: bold;
         }
 
-        /* ===== 价值总结 ===== */
+        /* ===== 价值对比 ===== */
         .value-section {
-            background: linear-gradient(135deg, rgba(74,144,217,0.08), rgba(38,222,129,0.05));
-            border: 2px dashed rgba(74,144,217,0.25);
-            border-radius: 16px;
-            padding: 3rem 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
         }
 
         .value-split {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .value-box {
             padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 14px;
+            border: 1px solid;
         }
 
         .value-box.b端 {
-            background: rgba(74,144,217,0.08);
-            border: 1px dashed rgba(74,144,217,0.3);
+            background: rgba(0, 119, 255, 0.04);
+            border-color: rgba(0, 119, 255, 0.15);
         }
 
         .value-box.c端 {
-            background: rgba(38,222,129,0.06);
-            border: 1px dashed rgba(38,222,129,0.25);
+            background: rgba(0, 229, 160, 0.04);
+            border-color: rgba(0, 229, 160, 0.15);
         }
 
         .value-box-icon {
@@ -469,266 +326,312 @@
         }
 
         .value-box-title {
-            font-family: 'Long Cang', cursive;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
         }
 
-        .value-box.b端 .value-box-title {
-            color: #a8d8ff;
-        }
-
-        .value-box.c端 .value-box-title {
-            color: #26de81;
-        }
+        .value-box.b端 .value-box-title { color: var(--accent-blue); }
+        .value-box.c端 .value-box-title { color: var(--accent-green); }
 
         .value-box-sub {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
         }
 
-        .value-box-features {
+        .value-features {
             list-style: none;
-            text-align: left;
         }
 
-        .value-box-features li {
-            color: rgba(255,255,255,0.7);
+        .value-features li {
             font-size: 0.85rem;
-            padding: 0.3rem 0;
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
             padding-left: 1.2rem;
             position: relative;
         }
 
-        .value-box.b端 .value-box-features li::before {
+        .value-box.b端 .value-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #4a90d9;
+            color: var(--accent-blue);
         }
 
-        .value-box.c端 .value-box-features li::before {
+        .value-box.c端 .value-features li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #26de81;
+            color: var(--accent-green);
         }
 
-        /* ===== CTA ===== */
-        .cta-section {
+        /* ===== 顶部 Banner ===== */
+        .top-banner {
+            background: linear-gradient(135deg, rgba(0,119,255,0.06), rgba(0,212,255,0.04));
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem 2rem;
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, transparent, rgba(74,144,217,0.05));
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-section p {
-            font-family: 'ZCOOL XiaoWei', cursive;
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 2rem;
+        .top-banner a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
         }
+
+        .top-banner a:hover { text-decoration: underline; }
 
         /* ===== 响应式 ===== */
-        @media (max-width: 900px) {
-            .roles-grid { grid-template-columns: repeat(2, 1fr); }
-            .advantages-grid { grid-template-columns: 1fr; }
-            .adv-card.full-width { grid-column: span 1; }
-            .cases-grid { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
             .value-split { grid-template-columns: 1fr; }
-            .arch-middle .arch-cards { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 600px) {
-            .roles-grid { grid-template-columns: 1fr; }
-            .hero-property h1 { font-size: 2rem; }
-            .hero-property .subtitle { font-size: 1rem; }
-            .arch-cards { flex-direction: column; align-items: center; }
-            .arch-middle .arch-cards { grid-template-columns: 1fr; }
+            .arch-svg-wrap { padding: 1.5rem 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="nav-bar">
-        <div class="nav-content">
-            <div class="nav-logo">🏠 华创天诚</div>
-            <ul class="nav-links">
-                <li><a href="index.html#about">关于华创</a></li>
-                <li><a href="index.html#solution-highlight">前店后院</a></li>
-                <li class="has-submenu">
-                    <a href="solution-property.html" class="active">公寓/园区/商圈</a>
-                    <ul class="submenu">
-                        <li><a href="solution-property.html">公寓运营数字化</a></li>
-                        <li><a href="solution-property.html#roles">园区管理数字化</a></li>
-                        <li><a href="solution-property.html#advantages">商圈运营数字化</a></li>
-                    </ul>
-                </li>
-                <li><a href="index.html#products">产品能力</a></li>
-                <li><a href="index.html#clients">客户案例</a></li>
-                <li><a href="solution-whitepaper.html" style="color: #e74c3c; font-weight: bold;">📥 白皮书</a></li>
-                <li><a href="index.html#spark">关于火花</a></li>
-                <li><a href="index.html#contact">预约演示</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="菜单" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
 
-    <style>
-        /* 子菜单样式 */
-        .has-submenu { position: relative; }
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(43, 43, 43, 0.98);
-            border: 1px dashed rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 0.5rem 0;
-            min-width: 160px;
-            z-index: 100;
-            white-space: nowrap;
-        }
-        .has-submenu:hover .submenu { display: block; }
-        .submenu li { list-style: none; }
-        .submenu a {
-            display: block !important;
-            padding: 0.5rem 1rem !important;
-            font-size: 0.85rem !important;
-            color: rgba(255,255,255,0.8) !important;
-            text-align: center;
-        }
-        .submenu a:hover {
-            color: #4a90d9 !important;
-            background: rgba(74,144,217,0.1);
-        }
-        .has-submenu > a::after {
-            content: ' ▼';
-            font-size: 0.6rem;
-        }
-    </style>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🔥 火花出品 · 华创天诚公寓/园区/商圈数字化解决方案 &nbsp;|&nbsp; <a href="index.html">← 返回首页</a>
+    </div>
 
     <!-- ===== Hero ===== -->
-    <header class="hero-property">
-        <div class="brand-badge">🏠 公寓/园区/商圈 数字化解决方案</div>
-        <h1>华创天诚 · 资产运营数字化</h1>
-        <p class="subtitle">集"管理 · 服务 · 运营 · 硬件"于一体的全链路闭环系统</p>
-        <p class="hero-desc">
-            从房源管控、租务合同、财务计费、智能物联到数据决策——<br>
-            一套系统覆盖公寓/园区/商圈全部运营场景，实现降本增效与资产增值。
+    <header class="hero">
+        <div class="hero-badge">
+            <span>🏠</span> 公寓 / 园区 / 商圈 数字化解决方案
+        </div>
+        <h1 class="hero-title">
+            资产运营<br><span class="accent">全链路数字化</span>
+        </h1>
+        <p class="hero-slogan">
+            集「管理 · 服务 · 运营 · 硬件」于一体，一套系统覆盖公寓/园区/商圈全部运营场景。<br>
+            私有化部署，数据100%自主。
         </p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">6</span>
+                <span class="stat-label">核心业务系统</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num">4</span>
+                <span class="stat-label">用户角色覆盖</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-num cyan">3+</span>
+                <span class="stat-label">落地项目验证</span>
+            </div>
+        </div>
         <div class="hero-cta">
-            <a href="index.html#contact" class="cta-btn primary">📅 预约演示</a>
-            <a href="#advantages" class="cta-btn secondary">了解核心优势</a>
+            <a href="index.html#contact" class="btn btn-primary">📅 预约演示</a>
+            <a href="#advantages" class="btn btn-secondary">了解核心优势 →</a>
         </div>
     </header>
 
     <!-- ===== 系统架构 ===== -->
-    <section class="section" id="architecture">
-        <div class="section-header">
-            <h2 class="chalk-title">⚙️ 系统组成架构</h2>
-            <div class="chalk-line"></div>
-            <p class="section-subtitle">统一中台化架构 · 前后端分层解耦</p>
-        </div>
+    <section class="arch-section" id="architecture">
+        <div class="arch-container">
+            <div class="section-label">System Architecture</div>
+            <h2 class="section-title">系统组成架构</h2>
+            <div class="section-divider"></div>
 
-        <div class="architecture-wrap">
-            <!-- 底层基础设施 -->
-            <div class="arch-layer">
-                <div class="arch-layer-title">━━━ 底层基础设施 ━━━</div>
-                <div class="arch-cards">
-                    <div class="arch-card">
-                        <div class="arch-icon">☁️</div>
-                        <div class="arch-name">阿里云服务器</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">🗄️</div>
-                        <div class="arch-name">数据中台</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">📊</div>
-                        <div class="arch-name">大数据支撑</div>
-                    </div>
-                </div>
-            </div>
+            <div class="arch-svg-wrap">
+                <svg class="arch-svg" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- 渐变定义 -->
+                        <linearGradient id="gradInfrastructure" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0D2A4A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0A1F3A;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradMiddle" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0A2040;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#081830;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradFrontend" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0D2A3A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#091F35;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0077FF;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00E5A0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00C4A0;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#4A90D9;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <filter id="cardShadow">
+                            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+                        </filter>
+                        <!-- 箭头marker -->
+                        <marker id="arrowCyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#00D4FF" opacity="0.7"/>
+                        </marker>
+                        <marker id="arrowWhite" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="rgba(255,255,255,0.3)"/>
+                        </marker>
+                    </defs>
 
-            <div class="arch-arrow-down">↓</div>
+                    <!-- ==================== 第一层：底层基础设施 ==================== -->
+                    <text x="450" y="32" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="rgba(0,212,255,0.5)" text-anchor="middle" letter-spacing="3">━━━ 底层基础设施 ━━━</text>
 
-            <!-- 业务中台 -->
-            <div class="arch-layer arch-middle">
-                <div class="arch-layer-title">━━━ 业务中台核心系统 ━━━</div>
-                <div class="arch-cards">
-                    <div class="arch-card">
-                        <div class="arch-icon">🏢</div>
-                        <div class="arch-name">房源与资产管理系统</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">📝</div>
-                        <div class="arch-name">租务与合同系统</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">💰</div>
-                        <div class="arch-name">财务计费系统</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">📡</div>
-                        <div class="arch-name">智能物联网（IoT）</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">🎧</div>
-                        <div class="arch-name">客服与运营系统</div>
-                    </div>
-                    <div class="arch-card">
-                        <div class="arch-icon">📈</div>
-                        <div class="arch-name">数据决策系统</div>
-                    </div>
-                </div>
-            </div>
+                    <!-- 云基础设施卡片 -->
+                    <rect x="40" y="45" width="240" height="68" rx="10" fill="url(#gradInfrastructure)" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.2" filter="url(#cardShadow)"/>
+                    <circle cx="72" cy="79" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                    <text x="72" y="84" font-family="Inter" font-size="14" text-anchor="middle">☁️</text>
+                    <text x="95" y="73" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">云化基础设施</text>
+                    <text x="95" y="88" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">阿里云服务器</text>
+                    <text x="95" y="101" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">高可用 ·弹性扩展</text>
 
-            <div class="arch-arrow-down">↓</div>
+                    <!-- 数据中台卡片 -->
+                    <rect x="310" y="45" width="280" height="68" rx="10" fill="url(#gradInfrastructure)" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.2" filter="url(#cardShadow)"/>
+                    <circle cx="342" cy="79" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                    <text x="342" y="84" font-family="Inter" font-size="14" text-anchor="middle">🗄️</text>
+                    <text x="368" y="73" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">数据中台</text>
+                    <text x="368" y="88" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">统一数据资产</text>
+                    <text x="368" y="101" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">清洗 · 建模 · 服务</text>
 
-            <!-- 前端交互平台 -->
-            <div class="arch-layer">
-                <div class="arch-layer-title">━━━ 前端交互平台 ━━━</div>
-                <div class="arch-cards">
-                    <div class="arch-card bottom">
-                        <div class="arch-icon">🖥️</div>
-                        <div class="arch-name">PC管理后台</div>
-                        <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">内部运营 · 物业人员</div>
-                    </div>
-                    <div class="arch-card bottom">
-                        <div class="arch-icon">📱</div>
-                        <div class="arch-name">租户小程序/公众号</div>
-                        <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">个人/企业租户</div>
-                    </div>
-                    <div class="arch-card bottom">
-                        <div class="arch-icon">🔑</div>
-                        <div class="arch-name">物业/管家工作端</div>
-                        <div style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.3rem;">移动端执行</div>
-                    </div>
-                </div>
+                    <!-- 大数据支撑卡片 -->
+                    <rect x="620" y="45" width="240" height="68" rx="10" fill="url(#gradInfrastructure)" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.2" filter="url(#cardShadow)"/>
+                    <circle cx="652" cy="79" r="18" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+                    <text x="652" y="84" font-family="Inter" font-size="14" text-anchor="middle">📊</text>
+                    <text x="678" y="73" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">大数据支撑</text>
+                    <text x="678" y="88" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.4)">海量存储</text>
+                    <text x="678" y="101" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">流批一体 · 实时分析</text>
+
+                    <!-- 第一层 → 第二层 连接线 -->
+                    <line x1="450" y1="113" x2="450" y2="148" stroke="url(#gradCyan)" stroke-width="1.5" stroke-opacity="0.5" marker-end="url(#arrowCyan)"/>
+                    <!-- 中间节点 -->
+                    <circle cx="450" cy="130" r="4" fill="#00D4FF" opacity="0.6"/>
+
+                    <!-- ==================== 第二层：业务中台核心系统 ==================== -->
+                    <text x="450" y="162" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="rgba(0,212,255,0.5)" text-anchor="middle" letter-spacing="3">━━━ 业务中台核心系统 ━━━</text>
+
+                    <!-- 六个系统 -->
+                    <!-- 房源与资产管理系统 -->
+                    <rect x="30" y="175" width="130" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="30" y="175" width="130" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="95" y="206" font-size="22" text-anchor="middle">🏢</text>
+                    <text x="95" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">房源与资产管理</text>
+                    <text x="95" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">项目·楼栋·房型·房间</text>
+                    <text x="95" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">全生命周期管控</text>
+                    <text x="95" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ 资产管理系统 ]</text>
+
+                    <!-- 租务与合同系统 -->
+                    <rect x="170" y="175" width="130" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="170" y="175" width="130" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="235" y="206" font-size="22" text-anchor="middle">📝</text>
+                    <text x="235" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">租务与合同系统</text>
+                    <text x="235" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">签约·续约·换租</text>
+                    <text x="235" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">转租·退租全流程</text>
+                    <text x="235" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ 合同系统 ]</text>
+
+                    <!-- 财务计费系统 -->
+                    <rect x="310" y="175" width="130" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="310" y="175" width="130" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="375" y="206" font-size="22" text-anchor="middle">💰</text>
+                    <text x="375" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">财务计费系统</text>
+                    <text x="375" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">账单·缴费·发票</text>
+                    <text x="375" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">活动报名费管理</text>
+                    <text x="375" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ 财务系统 ]</text>
+
+                    <!-- 智能物联网(IoT) -->
+                    <rect x="450" y="175" width="130" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="450" y="175" width="130" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="515" y="206" font-size="22" text-anchor="middle">📡</text>
+                    <text x="515" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">智能物联网 IoT</text>
+                    <text x="515" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">门禁·门锁·水电表</text>
+                    <text x="515" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">硬件管理模块</text>
+                    <text x="515" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ IoT系统 ]</text>
+
+                    <!-- 客服与运营系统 -->
+                    <rect x="590" y="175" width="130" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="590" y="175" width="130" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="655" y="206" font-size="22" text-anchor="middle">🎧</text>
+                    <text x="655" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">客服与运营系统</text>
+                    <text x="655" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">报修·投诉·建议</text>
+                    <text x="655" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">服务评价·活动管理</text>
+                    <text x="655" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ 客服系统 ]</text>
+
+                    <!-- 数据决策系统 -->
+                    <rect x="730" y="175" width="140" height="115" rx="10" fill="url(#gradMiddle)" stroke="rgba(0,212,255,0.15)" stroke-width="1" filter="url(#cardShadow)"/>
+                    <rect x="730" y="175" width="140" height="3" rx="1.5" fill="url(#gradCyan)" opacity="0.6"/>
+                    <text x="800" y="206" font-size="22" text-anchor="middle">📈</text>
+                    <text x="800" y="226" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF" text-anchor="middle">数据决策系统</text>
+                    <text x="800" y="240" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">数据看板</text>
+                    <text x="800" y="254" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">运营报表·流程诊断</text>
+                    <text x="800" y="278" font-family="Inter, sans-serif" font-size="8" fill="rgba(0,212,255,0.5)" text-anchor="middle">[ 决策系统 ]</text>
+
+                    <!-- 第二层 → 第三层 连接线 -->
+                    <line x1="450" y1="290" x2="450" y2="325" stroke="url(#gradGreen)" stroke-width="1.5" stroke-opacity="0.5" marker-end="url(#arrowCyan)"/>
+                    <circle cx="450" cy="307" r="4" fill="#00E5A0" opacity="0.6"/>
+
+                    <!-- ==================== 第三层：前端交互平台 ==================== -->
+                    <text x="450" y="345" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="rgba(0,229,160,0.5)" text-anchor="middle" letter-spacing="3">━━━ 前端交互平台 ━━━</text>
+
+                    <!-- PC管理后台 -->
+                    <rect x="90" y="360" width="220" height="110" rx="12" fill="url(#gradFrontend)" stroke="url(#gradGreen)" stroke-width="1" stroke-opacity="0.4" filter="url(#cardShadow)"/>
+                    <rect x="90" y="360" width="220" height="3" rx="1.5" fill="url(#gradGreen)" opacity="0.7"/>
+                    <text x="200" y="400" font-size="30" text-anchor="middle">🖥️</text>
+                    <text x="200" y="424" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">PC 管理后台</text>
+                    <text x="200" y="442" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" text-anchor="middle">面向内部运营与物业人员</text>
+                    <text x="200" y="456" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">综合管理平台</text>
+
+                    <!-- 租户小程序/公众号 -->
+                    <rect x="340" y="360" width="220" height="110" rx="12" fill="url(#gradFrontend)" stroke="url(#gradGreen)" stroke-width="1" stroke-opacity="0.4" filter="url(#cardShadow)"/>
+                    <rect x="340" y="360" width="220" height="3" rx="1.5" fill="url(#gradGreen)" opacity="0.7"/>
+                    <text x="450" y="400" font-size="30" text-anchor="middle">📱</text>
+                    <text x="450" y="424" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">租户小程序 / 公众号</text>
+                    <text x="450" y="442" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" text-anchor="middle">个人租户 · 企业租户</text>
+                    <text x="450" y="456" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">全周期居住生活服务</text>
+
+                    <!-- 物业/管家工作端 -->
+                    <rect x="590" y="360" width="220" height="110" rx="12" fill="url(#gradFrontend)" stroke="url(#gradGreen)" stroke-width="1" stroke-opacity="0.4" filter="url(#cardShadow)"/>
+                    <rect x="590" y="360" width="220" height="3" rx="1.5" fill="url(#gradGreen)" opacity="0.7"/>
+                    <text x="700" y="400" font-size="30" text-anchor="middle">🔑</text>
+                    <text x="700" y="424" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">物业 / 管家工作端</text>
+                    <text x="700" y="442" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" text-anchor="middle">物业 · 管家</text>
+                    <text x="700" y="456" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.35)" text-anchor="middle">移动端业务执行</text>
+
+                    <!-- 底部装饰线 -->
+                    <line x1="40" y1="495" x2="860" y2="495" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+                    <text x="450" y="512" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.2)" text-anchor="middle">华创天诚 · 资产运营数字化解决方案 · 技术架构示意图</text>
+                </svg>
+                    <text x="700
             </div>
         </div>
     </section>
 
     <!-- ===== 用户角色 ===== -->
     <section class="section" id="roles">
-        <div class="section-header">
-            <h2 class="chalk-title">👥 用户对象与场景划分</h2>
-            <div class="chalk-line"></div>
-            <p class="section-subtitle">四类核心用户 · 精准服务 · 全场景覆盖</p>
-        </div>
+        <div class="section-label">User Roles</div>
+        <h2 class="section-title">用户对象与场景划分</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">四类核心用户 · 精准服务 · 全场景覆盖</p>
 
-        <div class="roles-grid">
+        <div class="grid-4" style="margin-top: 2rem;">
             <!-- 运营管理层 -->
-            <div class="role-card">
+            <div class="role-card fade-up">
                 <div class="role-icon">🏢</div>
                 <div class="role-name">运营管理层</div>
-                <div class="role-desc">全局管控与决策</div>
-                <ul class="role-scenarios">
+                <div class="role-sub">全局管控与决策</div>
+                <ul class="role-scenes">
                     <li>数据看板监控（空置率/收缴率/满意度）</li>
                     <li>资产增值与风险控制</li>
                     <li>全项目运营报表与流程诊断</li>
@@ -737,13 +640,13 @@
             </div>
 
             <!-- 物业/管家 -->
-            <div class="role-card">
+            <div class="role-card fade-up">
                 <div class="role-icon">🔧</div>
-                <div class="role-name">物业/管家</div>
-                <div class="role-desc">业务执行与服务调度</div>
-                <ul class="role-scenarios">
+                <div class="role-name">物业 / 管家</div>
+                <div class="role-sub">业务执行与服务调度</div>
+                <ul class="role-scenes">
                     <li>预约看房智能派单与跟进</li>
-                    <li>合同签署/退租办理</li>
+                    <li>合同签署 / 退租办理</li>
                     <li>报修工单接派与处理</li>
                     <li>智能设备日常运维与安全巡检</li>
                 </ul>
@@ -751,24 +654,24 @@
             </div>
 
             <!-- 租户 -->
-            <div class="role-card">
+            <div class="role-card fade-up">
                 <div class="role-icon">🏠</div>
                 <div class="role-name">租户（个人/企业）</div>
-                <div class="role-desc">全周期居住生活服务</div>
-                <ul class="role-scenarios">
-                    <li>租前：在线看房/预约/定金缴纳</li>
-                    <li>租中：在线签约/智能门锁/水电缴费/在线报修</li>
-                    <li>租后：合同查看/发票申请</li>
+                <div class="role-sub">全周期居住生活服务</div>
+                <ul class="role-scenes">
+                    <li>租前：在线看房 / 预约 / 定金缴纳</li>
+                    <li>租中：在线签约 / 智能门锁 / 水电缴费 / 在线报修</li>
+                    <li>租后：合同查看 / 发票申请</li>
                 </ul>
                 <span class="role-platform">📱 小程序 / 公众号</span>
             </div>
 
             <!-- 访客/潜在客户 -->
-            <div class="role-card">
+            <div class="role-card fade-up">
                 <div class="role-icon">🔔</div>
-                <div class="role-name">访客/潜在客户</div>
-                <div class="role-desc">引流与转化体验</div>
-                <ul class="role-scenarios">
+                <div class="role-name">访客 / 潜在客户</div>
+                <div class="role-sub">引流与转化体验</div>
+                <ul class="role-scenes">
                     <li>房源浏览与好房推荐</li>
                     <li>线上预约看房</li>
                     <li>项目活动报名与资讯获取</li>
@@ -780,19 +683,22 @@
 
     <!-- ===== 核心优势 ===== -->
     <section class="section" id="advantages">
-        <div class="section-header">
-            <h2 class="chalk-title">💡 核心优势与亮点</h2>
-            <div class="chalk-line"></div>
-            <p class="section-subtitle">五大维度 · 全链路数字化闭环</p>
-        </div>
+        <div class="section-label">Core Advantages</div>
+        <h2 class="section-title">核心优势与亮点</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">五大维度 · 全链路数字化闭环</p>
 
-        <div class="advantages-grid">
-            <!-- 优势1 -->
-            <div class="adv-card full-width">
+        <div class="grid-2" style="margin-top: 2.5rem; gap: 1.5rem;">
+
+            <!-- 优势1：全链路闭环 -->
+            <div class="adv-card fade-up" style="grid-column: span 2;">
                 <div class="adv-num">01</div>
-                <div class="adv-title-main">全链路闭环，打破数据孤岛</div>
+                <div class="adv-icon">🔗</div>
+                <div class="adv-title">全链路闭环，打破数据孤岛</div>
                 <div class="adv-desc">
                     从"获客（预约看房）→ 签约 → 入住 → 服务（报修/缴费）→ 续约/退租"，形成完整的租务闭环，杜绝流程断点。
+                </div>
+                <div class="adv-sub">
                     打通租赁、物业、财务、硬件系统，实现"一次录入，全链流转"——例如合同签约后自动触发门禁授权和账单生成。
                 </div>
                 <div class="adv-tags">
@@ -802,12 +708,15 @@
                 </div>
             </div>
 
-            <!-- 优势2 -->
-            <div class="adv-card">
+            <!-- 优势2：合同自动化 -->
+            <div class="adv-card fade-up">
                 <div class="adv-num">02</div>
+                <div class="adv-icon">📋</div>
                 <div class="adv-title">合同全流程自动化与合规风控</div>
                 <div class="adv-desc">
                     支持新签、续签、换房、退租等各类合同的电子化签署与自动归档，大幅提升效率。
+                </div>
+                <div class="adv-sub">
                     不同状态的合同（生效/失效/终止）实时可查，确保合规性；合同到期、账单逾期等关键节点智能预警，降低运营风险。
                 </div>
                 <div class="adv-tags">
@@ -817,13 +726,16 @@
                 </div>
             </div>
 
-            <!-- 优势3 -->
-            <div class="adv-card">
+            <!-- 优势3：硬件即服务 -->
+            <div class="adv-card fade-up">
                 <div class="adv-num">03</div>
+                <div class="adv-icon">📡</div>
                 <div class="adv-title">"硬件即服务"的智能物联体验</div>
                 <div class="adv-desc">
                     智能门禁/门锁授权与租期、合同自动绑定，权限动态调整（退租自动失效），支持远程开门与密码修改。
-                    水电表一键远程抄表，数据自动校验，避免人工误差，数据直连财务系统生成账单，保障资产收益安全与合规。
+                </div>
+                <div class="adv-sub">
+                    水电表一键远程抄表，数据自动校验，避免人工误差；数据直连财务系统生成账单，保障资产收益安全与合规。
                 </div>
                 <div class="adv-tags">
                     <span class="adv-tag">设备联动</span>
@@ -832,12 +744,15 @@
                 </div>
             </div>
 
-            <!-- 优势4 -->
-            <div class="adv-card">
+            <!-- 优势4：零售化运营 -->
+            <div class="adv-card fade-up">
                 <div class="adv-num">04</div>
+                <div class="adv-icon">🛒</div>
                 <div class="adv-title">体验前置的零售化运营转化</div>
                 <div class="adv-desc">
-                    通过小程序和微信公众号，将服务体验前置。访客可便捷预约看房，系统智能派单管家，实现"预约发起→智能派单→状态同步→体验闭环"的可视化服务，提升转化率。
+                    通过小程序和微信公众号，将服务体验前置。访客可便捷预约看房，系统智能派单管家，实现"预约→派单→跟进→闭环"的可视化服务，提升转化率。
+                </div>
+                <div class="adv-sub">
                     内置运营活动管理、内容发布、优惠方案等模块，将"管理"升级为"社区运营"，提升租户粘性。
                 </div>
                 <div class="adv-tags">
@@ -847,13 +762,16 @@
                 </div>
             </div>
 
-            <!-- 优势5 -->
-            <div class="adv-card">
+            <!-- 优势5：数据驱动 -->
+            <div class="adv-card fade-up">
                 <div class="adv-num">05</div>
+                <div class="adv-icon">📊</div>
                 <div class="adv-title">数据驱动的资产增值能力</div>
                 <div class="adv-desc">
                     系统犹如公寓的"神经系统"，通过租控表直观展示空置周期与房源状态，辅助运营方精准定价与招商。
-                    在实际案例中，有效解决了老旧小区费用收缴难、设备维护滞后等问题，推动了居住品质与资产价值的双重提升。
+                </div>
+                <div class="adv-sub">
+                    在实际案例（桂木园公寓、深圳物资集团）中，有效解决了老旧小区费用收缴难、设备维护滞后等问题，推动了居住品质与资产价值的双重提升。
                 </div>
                 <div class="adv-tags">
                     <span class="adv-tag">租控可视化</span>
@@ -866,40 +784,39 @@
 
     <!-- ===== 客户案例 ===== -->
     <section class="section" id="cases">
-        <div class="section-header">
-            <h2 class="chalk-title">🏆 客户案例</h2>
-            <div class="chalk-line"></div>
-            <p class="section-subtitle">真实项目验证 · 效果可查</p>
-        </div>
+        <div class="section-label">Case Studies</div>
+        <h2 class="section-title">客户案例</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">真实项目验证 · 效果可查</p>
 
-        <div class="cases-grid">
-            <div class="case-card">
+        <div class="grid-3" style="margin-top: 2.5rem;">
+            <div class="case-card fade-up">
                 <div class="case-icon">🏢</div>
                 <div class="case-name">深圳物资集团</div>
                 <div class="case-type">资产运营方</div>
-                <ul class="case-result">
+                <ul class="case-results">
                     <li>老旧小区费用收缴率显著提升</li>
                     <li>设备维护响应效率大幅提高</li>
                     <li>居住品质与资产价值双提升</li>
                 </ul>
             </div>
 
-            <div class="case-card">
+            <div class="case-card fade-up">
                 <div class="case-icon">🏠</div>
                 <div class="case-name">天津 HALO HOME</div>
                 <div class="case-type">公寓运营</div>
-                <ul class="case-result">
+                <ul class="case-results">
                     <li>全流程数字化管理落地</li>
                     <li>租户体验全面升级</li>
                     <li>运营效率与服务质量同步提升</li>
                 </ul>
             </div>
 
-            <div class="case-card">
+            <div class="case-card fade-up">
                 <div class="case-icon">🌳</div>
                 <div class="case-name">桂木园公寓</div>
                 <div class="case-type">公寓运营</div>
-                <ul class="case-result">
+                <ul class="case-results">
                     <li>解决老旧小区管理难题</li>
                     <li>费用收缴难问题有效改善</li>
                     <li>设备维护管理智能化</li>
@@ -910,34 +827,33 @@
 
     <!-- ===== 价值总结 ===== -->
     <section class="section" id="value">
-        <div class="section-header">
-            <h2 class="chalk-title">🎯 一句话总结</h2>
-            <div class="chalk-line"></div>
-        </div>
+        <div class="section-label">Core Value</div>
+        <h2 class="section-title">一句话总结</h2>
+        <div class="section-divider"></div>
 
-        <div class="value-section">
-            <p style="text-align:center; color:rgba(255,255,255,0.7); font-size:1.05rem; line-height:1.8; max-width:700px; margin:0 auto;">
-                解决方案是一个集<span style="color:#a8d8ff;">"管理、服务、运营、硬件"</span>于一体的闭环系统。
+        <div class="value-section" style="margin-top: 2rem;">
+            <p style="text-align:center; color:var(--text-secondary); font-size:1.05rem; line-height:1.9; max-width:680px; margin:0 auto;">
+                这套系统是一个集<span style="color:var(--accent-cyan);font-weight:600;">「管理、服务、运营、硬件」</span>于一体的闭环系统。
             </p>
 
             <div class="value-split">
-                <div class="value-box b端">
+                <div class="value-box b端 fade-up">
                     <div class="value-box-icon">🏢</div>
                     <div class="value-box-title">对运营方（B端）</div>
                     <div class="value-box-sub">核心价值</div>
-                    <ul class="value-box-features">
+                    <ul class="value-features">
                         <li>房源管控，资产全生命周期管理</li>
-                        <li>租务自动化，效率提升</li>
+                        <li>租务自动化，效率大幅提升</li>
                         <li>财务线上化，账单一键生成</li>
                         <li>数据可视化，辅助精准决策</li>
                         <li>降本增效、资产增值、风险控制</li>
                     </ul>
                 </div>
-                <div class="value-box c端">
+                <div class="value-box c端 fade-up">
                     <div class="value-box-icon">🏠</div>
                     <div class="value-box-title">对租户与访客（C端）</div>
                     <div class="value-box-sub">核心价值</div>
-                    <ul class="value-box-features">
+                    <ul class="value-features">
                         <li>预约看房，便捷高效</li>
                         <li>在线签约，安全透明</li>
                         <li>智能开门，扫码即用</li>
@@ -950,33 +866,33 @@
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="cta-section" id="contact">
-        <p>想了解更多？预约免费诊断，获取专属方案</p>
-        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-            <a href="index.html#contact" class="cta-btn primary">📅 预约演示</a>
-            <a href="index.html" class="cta-btn secondary">← 返回首页</a>
+    <section class="cta-section">
+        <div class="top-banner" style="position:absolute;top:0;left:0;right:0;border-radius:16px 16px 0 0;">🔥 火花出品 · 华创天诚</div>
+        <p class="cta-title">想了解更多？预约免费诊断</p>
+        <p class="cta-desc">获取专属方案，快速启动数字化转型</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html#contact" class="btn btn-primary">📅 预约演示</a>
+            <a href="index.html" class="btn btn-secondary">← 返回首页</a>
         </div>
     </section>
 
-    <!-- ===== 页脚 ===== -->
+    <!-- ===== Footer ===== -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h4>华创天诚</h4>
-                <p>深圳市华创天诚科技有限公司</p>
-                <p>国家高新技术企业 · 双软认证</p>
-            </div>
-            <div class="footer-links">
-                <p>📍 深圳（总部） | 广州 | 上海 | 武汉 | 长沙 | 厦门</p>
-                <p>📞 0755-82545087</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 深圳市华创天诚科技有限公司 版权所有</p>
-        </div>
+        <p>© 2026 深圳市华创天诚科技有限公司 &nbsp;|&nbsp; <a href="index.html">返回首页</a></p>
     </footer>
 
     <script>
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -986,19 +902,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // 滚动动画
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.arch-card,.role-card,.adv-card,.case-card,.value-box').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
